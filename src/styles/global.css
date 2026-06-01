@@ -536,10 +536,10 @@ a:hover {
 }
 
 .filter-bar {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
   margin-bottom: 28px;
-  flex-wrap: wrap;
 }
 
 .filter-btn {

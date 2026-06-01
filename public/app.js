@@ -285,12 +285,12 @@ function renderAllResources() {
 
   <div class="filter-bar">
     <button class="filter-btn ${resourceFilter === 'all' ? 'active' : ''}" onclick="setResourceFilter('all')">All</button>
-    <button class="filter-btn ${resourceFilter === 'course' ? 'active' : ''}" onclick="setResourceFilter('course')">🎓 Courses</button>
-    <button class="filter-btn ${resourceFilter === 'youtube' ? 'active' : ''}" onclick="setResourceFilter('youtube')">▶️ YouTube</button>
-    <button class="filter-btn ${resourceFilter === 'books' ? 'active' : ''}" onclick="setResourceFilter('books')">📚 Books</button>
-    <button class="filter-btn ${resourceFilter === 'papers' ? 'active' : ''}" onclick="setResourceFilter('papers')">📄 Papers</button>
-    <button class="filter-btn ${resourceFilter === 'repos' ? 'active' : ''}" onclick="setResourceFilter('repos')">🐙 Repos</button>
-    <button class="filter-btn ${resourceFilter === 'websites' ? 'active' : ''}" onclick="setResourceFilter('websites')">🌐 Websites</button>
+    <button class="filter-btn ${resourceFilter === 'course' ? 'active' : ''}" onclick="setResourceFilter('course')">◇ Courses</button>
+    <button class="filter-btn ${resourceFilter === 'youtube' ? 'active' : ''}" onclick="setResourceFilter('youtube')">▶ YouTube</button>
+    <button class="filter-btn ${resourceFilter === 'books' ? 'active' : ''}" onclick="setResourceFilter('books')">⊡ Books</button>
+    <button class="filter-btn ${resourceFilter === 'papers' ? 'active' : ''}" onclick="setResourceFilter('papers')">◆ Papers</button>
+    <button class="filter-btn ${resourceFilter === 'repos' ? 'active' : ''}" onclick="setResourceFilter('repos')">⊞ Repos</button>
+    <button class="filter-btn ${resourceFilter === 'websites' ? 'active' : ''}" onclick="setResourceFilter('websites')">◎ Websites</button>
   </div>`;
 
   // Collect resources by type across all phases
@@ -308,12 +308,12 @@ function renderAllResources() {
   });
 
   const sections = [
-    { key: 'course', icon: '🎓', label: 'Courses', badge: '<span class="badge-free">🎓 Course</span>' },
-    { key: 'youtube', icon: '▶️', label: 'YouTube Playlists & Videos', badge: '<span class="badge-paid" style="background: rgba(255,0,0,0.15); color: #ff6b6b;">▶️ YouTube</span>' },
-    { key: 'books', icon: '📚', label: 'Free Books & Textbooks', badge: null },
-    { key: 'papers', icon: '📄', label: 'Research Papers', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">📄 Paper</span>' },
-    { key: 'repos', icon: '🐙', label: 'GitHub Repositories', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">🐙 Repo</span>' },
-    { key: 'websites', icon: '🌐', label: 'Websites & Tools', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">🌐 Link</span>' }
+    { key: 'course', icon: '◇', label: 'Courses', badge: '<span class="badge-free">◇ Course</span>' },
+    { key: 'youtube', icon: '▶', label: 'YouTube Playlists & Videos', badge: '<span class="badge-paid" style="background: rgba(255,0,0,0.15); color: #ff6b6b;">▶ YouTube</span>' },
+    { key: 'books', icon: '⊡', label: 'Free Books & Textbooks', badge: null },
+    { key: 'papers', icon: '◆', label: 'Research Papers', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">◆ Paper</span>' },
+    { key: 'repos', icon: '⊞', label: 'GitHub Repositories', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">⊞ Repo</span>' },
+    { key: 'websites', icon: '◎', label: 'Websites & Tools', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">◎ Link</span>' }
   ];
 
   sections.forEach(section => {
@@ -338,8 +338,8 @@ function renderAllResources() {
       let badgeHtml = section.badge;
       if (section.key === 'books') {
         badgeHtml = d.free
-          ? '<span class="badge-free">📚 Free PDF</span>'
-          : '<span class="badge-paid">📚 Book</span>';
+          ? '<span class="badge-free">⊡ Free PDF</span>'
+          : '<span class="badge-paid">⊡ Book</span>';
       }
 
       h += `<div class="card" style="margin-bottom:0;" onclick="openModal('${item.p.key}', ${item.ti}, '${section.key}', ${item.idx ?? 0})">

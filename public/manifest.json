@@ -1,0 +1,27 @@
+{
+  "name": "AI · ML · DL Roadmap",
+  "short_name": "AI ML DL",
+  "description": "A curated 12-18 month AI/ML/DL learning roadmap. 8 phases from Python to LLMs, 30+ topics, 100+ hand-picked resources.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#181818",
+  "theme_color": "#181818",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "technology"],
+  "lang": "en",
+  "dir": "ltr"
+}

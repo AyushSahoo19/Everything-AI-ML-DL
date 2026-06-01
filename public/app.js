@@ -1,12 +1,18 @@
 let cur = 'python';
 let activeFilter = 'all';
 let activeTopicIndex = 0;
+let resourceFilter = 'all';
 
 function setFilter(f) {
   activeFilter = f;
   const main = document.getElementById('main');
   const p = PHASES.find(x => x.key === cur);
   if (p) main.innerHTML = renderPhase(p);
+}
+
+function setResourceFilter(f) {
+  resourceFilter = f;
+  document.getElementById('main').innerHTML = renderAllResources();
 }
 
 function setTopic(index) {
@@ -275,6 +281,16 @@ function renderAllResources() {
       <div class="dots-menu">•••</div>
     </div>
     <div class="phase-purpose">Every resource across all 8 phases — organized by type and listed in the sequence you should follow. Click any card to see details.</div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn ${resourceFilter === 'all' ? 'active' : ''}" onclick="setResourceFilter('all')">All</button>
+    <button class="filter-btn ${resourceFilter === 'course' ? 'active' : ''}" onclick="setResourceFilter('course')">🎓 Courses</button>
+    <button class="filter-btn ${resourceFilter === 'youtube' ? 'active' : ''}" onclick="setResourceFilter('youtube')">▶️ YouTube</button>
+    <button class="filter-btn ${resourceFilter === 'books' ? 'active' : ''}" onclick="setResourceFilter('books')">📚 Books</button>
+    <button class="filter-btn ${resourceFilter === 'papers' ? 'active' : ''}" onclick="setResourceFilter('papers')">📄 Papers</button>
+    <button class="filter-btn ${resourceFilter === 'repos' ? 'active' : ''}" onclick="setResourceFilter('repos')">🐙 Repos</button>
+    <button class="filter-btn ${resourceFilter === 'websites' ? 'active' : ''}" onclick="setResourceFilter('websites')">🌐 Websites</button>
   </div>`;
 
   // Collect resources by type across all phases
@@ -303,9 +319,12 @@ function renderAllResources() {
   sections.forEach(section => {
     const items = byType[section.key];
     if (!items.length) return;
+    if (resourceFilter !== 'all' && resourceFilter !== section.key) return;
+
+    const showLabel = resourceFilter === 'all' ? section.label + ' <span style="color:var(--text-muted);font-weight:400;font-size:13px;">(' + items.length + ')</span>' : section.label;
 
     h += `<div style="margin-top: 36px;">
-      <div class="section-title"><span class="icon">${section.icon}</span> <span>${section.label} <span style="color:var(--text-muted);font-weight:400;font-size:13px;">(${items.length})</span></span></div>
+      <div class="section-title"><span class="icon">${section.icon}</span> <span>${showLabel}</span></div>
       <div class="grid-1">`;
 
     items.forEach((item, idx) => {

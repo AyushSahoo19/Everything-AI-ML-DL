@@ -94,25 +94,28 @@ a:hover { text-decoration: underline; }
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
   text-decoration: none;
   flex-shrink: 0;
+  letter-spacing: 0.3px;
 }
 .nav-brand:hover { text-decoration: none; color: var(--text-primary); }
 
 .nav-brand-icon {
-  width: 26px; height: 26px;
-  border-radius: var(--radius-sm);
-  background: rgba(127, 188, 246, 0.1);
-  border: 1px solid rgba(127, 188, 246, 0.2);
+  width: 28px; height: 28px;
   display: flex; align-items: center; justify-content: center;
-  color: var(--text-link);
+  color: var(--text-primary);
   flex-shrink: 0;
+  font-size: 13px;
+  line-height: 1;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 6px;
+  background: rgba(0,0,0,0.03);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
-.nav-brand-icon svg { width: 14px; height: 14px; stroke-width: 1.75; }
 
 .nav-divider {
   width: 1px;

@@ -299,134 +299,134 @@ function renderAllResources() {
       primary: 'Essence of Linear Algebra (3Blue1Brown)',
       note: 'Build mathematical intuition first, then layer on formalism.',
       steps: [
-        { label: 'Build intuition', items: [{ n: 'Essence of Linear Algebra — 3Blue1Brown', t: '▶', u: 'https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab' }, { n: 'Essence of Calculus — 3Blue1Brown', t: '▶', u: 'https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr' }] },
-        { label: 'Structured course', items: [{ n: 'Mathematics for ML — Imperial College (Coursera)', t: '◇' }, { n: 'Probabilistic ML — Duke (Coursera)', t: '◇' }] },
-        { label: 'Read & reference', items: [{ n: 'Matrix Calculus for Deep Learning (Parr & Howard)', t: '◆' }, { n: 'Seeing Theory — Brown University', t: '◎' }, { n: 'StatQuest — Statistics Fundamentals', t: '▶' }] }
+        { label: 'Build intuition', items: [{ n: 'Essence of Linear Algebra — 3Blue1Brown', u: 'https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab' }, { n: 'Essence of Calculus — 3Blue1Brown', u: 'https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr' }] },
+        { label: 'Structured course', items: [{ n: 'Mathematics for ML — Imperial College (Coursera)' }, { n: 'Probabilistic ML — Duke (Coursera)' }] },
+        { label: 'Read & reference', items: [{ n: 'Matrix Calculus for Deep Learning (Parr & Howard)' }, { n: 'Seeing Theory — Brown University' }, { n: 'StatQuest — Statistics Fundamentals' }] }
       ]
     },
     prog: {
       primary: 'CS50P (Harvard) + Python Data Science Handbook',
       note: 'Master Python, NumPy, Pandas, and Matplotlib — these are prerequisites for everything else.',
       steps: [
-        { label: 'Python fundamentals', items: [{ n: 'CS50P — Harvard (edX)', t: '◇' }, { n: 'Automate the Boring Stuff (Al Sweigart)', t: '⊡' }] },
-        { label: 'Numerical computing', items: [{ n: 'NumPy Crash Course — freeCodeCamp', t: '▶' }, { n: 'Python Data Science Handbook (VanderPlas) — NumPy', t: '⊡' }] },
-        { label: 'Data wrangling & viz', items: [{ n: 'Kaggle Pandas Course', t: '◇' }, { n: 'Keith Galli Pandas Tutorial', t: '▶' }, { n: 'Corey Schafer Matplotlib Tutorial', t: '▶' }, { n: 'Seaborn Gallery', t: '◎' }] }
+        { label: 'Python fundamentals', items: [{ n: 'CS50P — Harvard (edX)' }, { n: 'Automate the Boring Stuff (Al Sweigart)' }] },
+        { label: 'Numerical computing', items: [{ n: 'NumPy Crash Course — freeCodeCamp' }, { n: 'Python Data Science Handbook (VanderPlas) — NumPy' }] },
+        { label: 'Data wrangling & viz', items: [{ n: 'Kaggle Pandas Course' }, { n: 'Keith Galli Pandas Tutorial' }, { n: 'Corey Schafer Matplotlib Tutorial' }, { n: 'Seaborn Gallery' }] }
       ]
     },
     cml: {
       primary: 'Andrew Ng ML Specialization (Coursera)',
       note: 'This is the most important phase of your entire ML journey. Do not rush it.',
       steps: [
-        { label: 'Core course', items: [{ n: 'Machine Learning Specialization — Andrew Ng (Coursera)', t: '◇' }] },
-        { label: 'Deepen with textbook', items: [{ n: 'ISLP — Introduction to Statistical Learning (James, Witten, Hastie, Tibshirani)', t: '⊡' }] },
-        { label: 'Practice', items: [{ n: 'Hands-On Machine Learning (Géron)', t: '⊡' }, { n: 'Scikit-Learn Documentation Guide', t: '◎' }, { n: 'ML-From-Scratch', t: '⊞' }] },
-        { label: 'Advanced topics', items: [{ n: 'XGBoost Paper (Chen & Guestrin)', t: '◆' }, { n: 'Random Forests Paper (Breiman)', t: '◆' }] }
+        { label: 'Core course', items: [{ n: 'Machine Learning Specialization — Andrew Ng (Coursera)' }] },
+        { label: 'Deepen with textbook', items: [{ n: 'ISLP — Introduction to Statistical Learning (James, Witten, Hastie, Tibshirani)' }] },
+        { label: 'Practice', items: [{ n: 'Hands-On Machine Learning (Géron)' }, { n: 'Scikit-Learn Documentation Guide' }, { n: 'ML-From-Scratch' }] },
+        { label: 'Advanced topics', items: [{ n: 'XGBoost Paper (Chen & Guestrin)' }, { n: 'Random Forests Paper (Breiman)' }] }
       ]
     },
     dlcore: {
       primary: 'Deep Learning Specialization (Andrew Ng)',
       note: 'Understand neural network internals before using frameworks.',
       steps: [
-        { label: 'Foundations', items: [{ n: 'Deep Learning Specialization — Andrew Ng (Coursera)', t: '◇' }, { n: 'Neural Networks & Deep Learning (Michael Nielsen)', t: '⊡' }] },
-        { label: 'Visual intuition', items: [{ n: 'Neural Networks — 3Blue1Brown', t: '▶' }, { n: 'Backpropagation Calculus — 3Blue1Brown', t: '▶' }] },
-        { label: 'Architectures', items: [{ n: 'Stanford CS231n — CNNs for Visual Recognition', t: '◇' }, { n: 'Stanford CS224n — NLP with Deep Learning', t: '◇' }] },
-        { label: 'Key papers', items: [{ n: 'Dropout Paper (Srivastava et al.)', t: '◆' }, { n: 'Adam Paper (Kingma & Ba)', t: '◆' }, { n: 'ResNet Paper (He et al.)', t: '◆' }] }
+        { label: 'Foundations', items: [{ n: 'Deep Learning Specialization — Andrew Ng (Coursera)' }, { n: 'Neural Networks & Deep Learning (Michael Nielsen)' }] },
+        { label: 'Visual intuition', items: [{ n: 'Neural Networks — 3Blue1Brown' }, { n: 'Backpropagation Calculus — 3Blue1Brown' }] },
+        { label: 'Architectures', items: [{ n: 'Stanford CS231n — CNNs for Visual Recognition' }, { n: 'Stanford CS224n — NLP with Deep Learning' }] },
+        { label: 'Key papers', items: [{ n: 'Dropout Paper (Srivastava et al.)' }, { n: 'Adam Paper (Kingma & Ba)' }, { n: 'ResNet Paper (He et al.)' }] }
       ]
     },
     papers: {
       primary: 'Attention Is All You Need (Vaswani et al., 2017)',
       note: 'Start here, then follow the citation chain. Read in chronological order to see how ideas built on each other.',
       steps: [
-        { label: 'The Transformer era (2017–2018)', items: [{ n: 'Attention Is All You Need (Vaswani et al.)', t: '◆' }, { n: 'BERT (Devlin et al.)', t: '◆' }] },
-        { label: 'Scaling & few-shot (2020–2022)', items: [{ n: 'GPT-3 — Language Models are Few-Shot Learners', t: '◆' }, { n: 'Scaling Laws (Kaplan et al.)', t: '◆' }, { n: 'Chinchilla (Hoffmann et al.)', t: '◆' }] },
-        { label: 'Alignment & fine-tuning (2022–2023)', items: [{ n: 'InstructGPT (Ouyang et al.)', t: '◆' }, { n: 'Constitutional AI (Bai et al.)', t: '◆' }, { n: 'LoRA (Hu et al.)', t: '◆' }] },
-        { label: 'Frontier understanding', items: [{ n: 'Residual Networks (He et al.)', t: '◆' }, { n: 'ML Technical Debt (Sculley et al.)', t: '◆' }, { n: 'Dropout (Srivastava et al.)', t: '◆' }, { n: 'Adam (Kingma & Ba)', t: '◆' }] }
+        { label: 'The Transformer era (2017–2018)', items: [{ n: 'Attention Is All You Need (Vaswani et al.)' }, { n: 'BERT (Devlin et al.)' }] },
+        { label: 'Scaling & few-shot (2020–2022)', items: [{ n: 'GPT-3 — Language Models are Few-Shot Learners' }, { n: 'Scaling Laws (Kaplan et al.)' }, { n: 'Chinchilla (Hoffmann et al.)' }] },
+        { label: 'Alignment & fine-tuning (2022–2023)', items: [{ n: 'InstructGPT (Ouyang et al.)' }, { n: 'Constitutional AI (Bai et al.)' }, { n: 'LoRA (Hu et al.)' }] },
+        { label: 'Frontier understanding', items: [{ n: 'Residual Networks (He et al.)' }, { n: 'ML Technical Debt (Sculley et al.)' }, { n: 'Dropout (Srivastava et al.)' }, { n: 'Adam (Kingma & Ba)' }] }
       ]
     },
     nlp: {
       primary: 'Stanford CS224n + HuggingFace NLP Course',
       note: 'Build from classical NLP through transformers to LLM fine-tuning.',
       steps: [
-        { label: 'Course foundation', items: [{ n: 'Stanford CS224n — NLP with Deep Learning', t: '◇' }, { n: 'HuggingFace NLP Course', t: '◇' }] },
-        { label: 'Build from scratch', items: [{ n: 'Let\'s build GPT from scratch — Andrej Karpathy', t: '▶' }, { n: 'Build a Large Language Model (Sebastian Raschka)', t: '⊡' }] },
-        { label: 'Fine-tuning & alignment', items: [{ n: 'HuggingFace Transformers Docs + PEFT', t: '◎' }, { n: 'LoRA Paper', t: '◆' }, { n: 'Stanford CS336 — LLM Bootcamp', t: '◇' }] },
-        { label: 'Reference', items: [{ n: 'BERT Paper', t: '◆' }, { n: 'GPT-3 Paper', t: '◆' }, { n: 'Constitutional AI Paper', t: '◆' }] }
+        { label: 'Course foundation', items: [{ n: 'Stanford CS224n — NLP with Deep Learning' }, { n: 'HuggingFace NLP Course' }] },
+        { label: 'Build from scratch', items: [{ n: 'Let\'s build GPT from scratch — Andrej Karpathy' }, { n: 'Build a Large Language Model (Sebastian Raschka)' }] },
+        { label: 'Fine-tuning & alignment', items: [{ n: 'HuggingFace Transformers Docs + PEFT' }, { n: 'LoRA Paper' }, { n: 'Stanford CS336 — LLM Bootcamp' }] },
+        { label: 'Reference', items: [{ n: 'BERT Paper' }, { n: 'GPT-3 Paper' }, { n: 'Constitutional AI Paper' }] }
       ]
     },
     cv: {
       primary: 'Stanford CS231n',
       note: 'Start with CNNs, then move to modern transformer-based vision.',
       steps: [
-        { label: 'Core course', items: [{ n: 'Stanford CS231n — CNNs for Visual Recognition', t: '◇' }] },
-        { label: 'Build understanding', items: [{ n: 'ResNet Paper (He et al.)', t: '◆' }, { n: 'Vision Transformer (ViT) Paper (Dosovitskiy et al.)', t: '◆' }] },
-        { label: 'Modern systems', items: [{ n: 'Segment Anything (SAM) — Meta AI', t: '◆' }, { n: 'YOLO — Real-Time Object Detection', t: '◆' }, { n: 'PyTorch Image Models (timm)', t: '⊞' }] }
+        { label: 'Core course', items: [{ n: 'Stanford CS231n — CNNs for Visual Recognition' }] },
+        { label: 'Build understanding', items: [{ n: 'ResNet Paper (He et al.)' }, { n: 'Vision Transformer (ViT) Paper (Dosovitskiy et al.)' }] },
+        { label: 'Modern systems', items: [{ n: 'Segment Anything (SAM) — Meta AI' }, { n: 'YOLO — Real-Time Object Detection' }, { n: 'PyTorch Image Models (timm)' }] }
       ]
     },
     rl: {
       primary: 'David Silver RL Course (DeepMind / YouTube)',
       note: 'RL has steep prerequisites — ensure you have strong probability and DL first.',
       steps: [
-        { label: 'Core course', items: [{ n: 'David Silver — Reinforcement Learning (DeepMind)', t: '▶' }] },
-        { label: 'Textbook', items: [{ n: 'Sutton & Barto — Reinforcement Learning: An Introduction', t: '⊡' }] },
-        { label: 'Key papers', items: [{ n: 'DQN — Playing Atari with Deep RL (Mnih et al.)', t: '◆' }, { n: 'PPO — Proximal Policy Optimization (Schulman et al.)', t: '◆' }] },
-        { label: 'Practice', items: [{ n: 'HuggingFace Deep RL Course', t: '◇' }, { n: 'OpenAI Gym / Farama Gymnasium', t: '⊞' }] }
+        { label: 'Core course', items: [{ n: 'David Silver — Reinforcement Learning (DeepMind)' }] },
+        { label: 'Textbook', items: [{ n: 'Sutton & Barto — Reinforcement Learning: An Introduction' }] },
+        { label: 'Key papers', items: [{ n: 'DQN — Playing Atari with Deep RL (Mnih et al.)' }, { n: 'PPO — Proximal Policy Optimization (Schulman et al.)' }] },
+        { label: 'Practice', items: [{ n: 'HuggingFace Deep RL Course' }, { n: 'OpenAI Gym / Farama Gymnasium' }] }
       ]
     },
     genai: {
       primary: 'HuggingFace Diffusion Models Course',
       note: 'Generative AI builds on deep learning fundamentals. Complete Stage 3 first.',
       steps: [
-        { label: 'Course', items: [{ n: 'HuggingFace Diffusion Models Course', t: '◇' }, { n: 'MIT Flow Matching & Diffusion Models (2026)', t: '◇' }] },
-        { label: 'Theory deep-dive', items: [{ n: 'What are Diffusion Models? — Lilian Weng', t: '◎' }, { n: 'The Annotated Diffusion Model — Hugging Face', t: '◎' }] },
-        { label: 'Key papers', items: [{ n: 'DDPM (Ho et al., 2020)', t: '◆' }, { n: 'Latent Diffusion / Stable Diffusion (Rombach et al.)', t: '◆' }, { n: 'DiT — Diffusion Transformers (Peebles & Xie)', t: '◆' }] },
-        { label: 'Build from scratch', items: [{ n: 'Diffusion 101 — PyTorch Implementation', t: '⊞' }, { n: 'HuggingFace Diffusers Library', t: '⊞' }] }
+        { label: 'Course', items: [{ n: 'HuggingFace Diffusion Models Course' }, { n: 'MIT Flow Matching & Diffusion Models (2026)' }] },
+        { label: 'Theory deep-dive', items: [{ n: 'What are Diffusion Models? — Lilian Weng' }, { n: 'The Annotated Diffusion Model — Hugging Face' }] },
+        { label: 'Key papers', items: [{ n: 'DDPM (Ho et al., 2020)' }, { n: 'Latent Diffusion / Stable Diffusion (Rombach et al.)' }, { n: 'DiT — Diffusion Transformers (Peebles & Xie)' }] },
+        { label: 'Build from scratch', items: [{ n: 'Diffusion 101 — PyTorch Implementation' }, { n: 'HuggingFace Diffusers Library' }] }
       ]
     },
     repos: {
       primary: 'micrograd + Let\'s build GPT (Andrej Karpathy)',
       note: 'These repos let you build neural networks from scratch. Run the code, break it, fix it.',
       steps: [
-        { label: 'Build a neural net from scratch', items: [{ n: 'micrograd — Karpathy', t: '⊞' }, { n: 'nn-zero-to-hero — Karpathy', t: '⊞' }] },
-        { label: 'Language modeling from scratch', items: [{ n: 'makemore — Karpathy', t: '⊞' }, { n: 'Let\'s build GPT — Karpathy', t: '⊞' }] },
-        { label: 'Implement ML algorithms', items: [{ n: 'ML-From-Scratch', t: '⊞' }, { n: 'Made With ML — Goku Mohandas', t: '⊞' }] },
-        { label: 'Production & research', items: [{ n: 'LLaMA 3 — Meta', t: '⊞' }, { n: 'Transformers — HuggingFace', t: '⊞' }] }
+        { label: 'Build a neural net from scratch', items: [{ n: 'micrograd — Karpathy' }, { n: 'nn-zero-to-hero — Karpathy' }] },
+        { label: 'Language modeling from scratch', items: [{ n: 'makemore — Karpathy' }, { n: 'Let\'s build GPT — Karpathy' }] },
+        { label: 'Implement ML algorithms', items: [{ n: 'ML-From-Scratch' }, { n: 'Made With ML — Goku Mohandas' }] },
+        { label: 'Production & research', items: [{ n: 'LLaMA 3 — Meta' }, { n: 'Transformers — HuggingFace' }] }
       ]
     },
     mlops: {
       primary: 'Made With ML (Goku Mohandas)',
       note: 'MLOps is about reliability and reproducibility. Learn it after you have shipped at least one model.',
       steps: [
-        { label: 'Course', items: [{ n: 'Made With ML — Goku Mohandas', t: '◇' }, { n: 'Full Stack Deep Learning — UC Berkeley', t: '◇' }] },
-        { label: 'Books', items: [{ n: 'Designing Machine Learning Systems (Chip Huyen)', t: '⊡' }, { n: 'Machine Learning Engineering (Andriy Burkov)', t: '⊡' }] },
-        { label: 'Tools & practice', items: [{ n: 'Weights & Biases Documentation', t: '◎' }, { n: 'MLflow Documentation', t: '◎' }, { n: 'FastAPI for Model Serving', t: '⊞' }] },
-        { label: 'Key paper', items: [{ n: 'ML Technical Debt (Sculley et al., Google)', t: '◆' }] }
+        { label: 'Course', items: [{ n: 'Made With ML — Goku Mohandas' }, { n: 'Full Stack Deep Learning — UC Berkeley' }] },
+        { label: 'Books', items: [{ n: 'Designing Machine Learning Systems (Chip Huyen)' }, { n: 'Machine Learning Engineering (Andriy Burkov)' }] },
+        { label: 'Tools & practice', items: [{ n: 'Weights & Biases Documentation' }, { n: 'MLflow Documentation' }, { n: 'FastAPI for Model Serving' }] },
+        { label: 'Key paper', items: [{ n: 'ML Technical Debt (Sculley et al., Google)' }] }
       ]
     },
     research: {
       primary: 'PapersWithCode + Connected Papers',
       note: 'Reading papers is a skill. Use the three-pass method: abstract → figures → full read.',
       steps: [
-        { label: 'Discovery tools', items: [{ n: 'Papers With Code', t: '◎' }, { n: 'HuggingFace Daily Papers', t: '◎' }, { n: 'Connected Papers', t: '◎' }, { n: 'Semantic Scholar', t: '◎' }] },
-        { label: 'Reading method', items: [{ n: 'How to Read a Paper (Keshav)', t: '◆' }] }
+        { label: 'Discovery tools', items: [{ n: 'Papers With Code' }, { n: 'HuggingFace Daily Papers' }, { n: 'Connected Papers' }, { n: 'Semantic Scholar' }] },
+        { label: 'Reading method', items: [{ n: 'How to Read a Paper (Keshav)' }] }
       ]
     },
     blogs: {
       primary: 'The Batch (DeepLearning.AI) — weekly must-read',
       note: 'Set up a weekly reading habit. These are the highest-signal sources in the field.',
       steps: [
-        { label: 'Weekly must-reads', items: [{ n: 'The Batch — DeepLearning.AI', t: '◎' }, { n: 'TLDR AI — 5-min daily digest', t: '◎' }] },
-        { label: 'Deep technical dives', items: [{ n: 'Ahead of AI — Sebastian Raschka', t: '◎' }, { n: 'Lilian Weng\'s Blog', t: '◎' }, { n: 'Jay Alammar\'s Visual Explanations', t: '◎' }] },
-        { label: 'Research & analysis', items: [{ n: 'Import AI — Jack Clark', t: '◎' }, { n: 'distill.pub — Interactive Research', t: '◎' }] }
+        { label: 'Weekly must-reads', items: [{ n: 'The Batch — DeepLearning.AI' }, { n: 'TLDR AI — 5-min daily digest' }] },
+        { label: 'Deep technical dives', items: [{ n: 'Ahead of AI — Sebastian Raschka' }, { n: 'Lilian Weng\'s Blog' }, { n: 'Jay Alammar\'s Visual Explanations' }] },
+        { label: 'Research & analysis', items: [{ n: 'Import AI — Jack Clark' }, { n: 'distill.pub — Interactive Research' }] }
       ]
     },
     frontier: {
       primary: 'AI Index Report (Stanford HAI) + arXiv cs.LG',
       note: 'Stay current by reading one paper and one newsletter per week.',
       steps: [
-        { label: 'Big picture', items: [{ n: 'Stanford HAI 2026 AI Index Report', t: '◎' }] },
-        { label: 'Courses to broaden', items: [{ n: 'fast.ai — Practical Deep Learning', t: '◇' }, { n: 'MIT 6.S191 — Intro to Deep Learning', t: '◇' }, { n: 'DeepLearning.AI Short Courses', t: '◇' }] },
-        { label: 'Papers to read', items: [{ n: 'Scaling Laws (Kaplan et al.)', t: '◆' }, { n: 'Chinchilla (Hoffmann et al.)', t: '◆' }] },
-        { label: 'Stay updated', items: [{ n: 'arXiv cs.LG / cs.AI / cs.CL', t: '◎' }, { n: 'HuggingFace Daily Papers', t: '◎' }] }
+        { label: 'Big picture', items: [{ n: 'Stanford HAI 2026 AI Index Report' }] },
+        { label: 'Courses to broaden', items: [{ n: 'fast.ai — Practical Deep Learning' }, { n: 'MIT 6.S191 — Intro to Deep Learning' }, { n: 'DeepLearning.AI Short Courses' }] },
+        { label: 'Papers to read', items: [{ n: 'Scaling Laws (Kaplan et al.)' }, { n: 'Chinchilla (Hoffmann et al.)' }] },
+        { label: 'Stay updated', items: [{ n: 'arXiv cs.LG / cs.AI / cs.CL' }, { n: 'HuggingFace Daily Papers' }] }
       ]
     }
   };
@@ -565,27 +565,33 @@ function renderAllResources() {
     // Learning sequence (only when viewing a single category)
     if (resourceFilter !== 'all' && SEQUENCES[cat.k]) {
       const seq = SEQUENCES[cat.k];
-      h += `<div style="margin-bottom:20px;padding:16px 20px;border:1px solid rgba(255,255,255,0.08);border-radius:8px;background:rgba(255,255,255,0.02);">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-          <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);">Learning Sequence</span>
-          <span style="font-size:11px;color:var(--text-muted);">·</span>
-          <span style="font-size:11px;color:var(--text-link);">Start with</span>
-          <span style="font-size:12px;font-weight:600;color:var(--text-primary);">${seq.primary}</span>
+      h += `<div style="margin-bottom:24px;padding:20px 24px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;background:linear-gradient(145deg,rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.01) 100%);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--text-secondary);">~</div>
+            <span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-secondary);">Learning Sequence</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-link);font-weight:500;">Flagship: ${seq.primary}</div>
         </div>
-        <div style="font-size:12px;color:var(--text-muted);margin-bottom:14px;padding:8px 12px;background:rgba(255,255,255,0.03);border-radius:6px;border-left:2px solid rgba(255,255,255,0.1);">${seq.note}</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          ${seq.steps.map((step, si) => `<div style="display:flex;gap:12px;">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
-              <div style="width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:var(--text-secondary);flex-shrink:0;">${si + 1}</div>
-              ${si < seq.steps.length - 1 ? '<div style="width:1px;flex:1;background:rgba(255,255,255,0.06);"></div>' : ''}
-            </div>
-            <div style="flex:1;padding-bottom:${si < seq.steps.length - 1 ? '10px' : '0'};">
-              <div style="font-size:12px;font-weight:500;color:var(--text-secondary);margin-bottom:6px;">${step.label}</div>
-              <div style="display:flex;flex-wrap:wrap;gap:6px;">
-                ${step.items.map(item => `<a href="${item.u || '#'}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:5px;font-size:11px;color:var(--text-primary);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'"><span style="opacity:0.6;">${item.t}</span> ${item.n}</a>`).join('')}
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:20px;">
+          <div style="padding:12px 14px;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid var(--text-link);">
+            <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:4px;">How to Follow</div>
+            <div style="font-size:13px;color:var(--text-primary);line-height:1.5;">${seq.note}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            ${seq.steps.map((step, si) => `<div style="display:flex;gap:14px;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:24px;">
+                <div style="width:24px;height:24px;border-radius:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:var(--text-secondary);flex-shrink:0;">${si + 1}</div>
+                ${si < seq.steps.length - 1 ? '<div style="width:1px;flex:1;min-height:8px;background:rgba(255,255,255,0.06);"></div>' : ''}
               </div>
-            </div>
-          </div>`).join('')}
+              <div style="flex:1;padding-bottom:${si < seq.steps.length - 1 ? '4px' : '0'};">
+                <div style="font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:8px;">${step.label}</div>
+                <div style="display:flex;flex-direction:column;gap:4px;">
+                  ${step.items.map(item => `<div style="padding:7px 12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);border-radius:6px;font-size:12px;color:var(--text-primary);line-height:1.4;">${item.n}</div>`).join('')}
+                </div>
+              </div>
+            </div>`).join('')}
+          </div>
         </div>
       </div>`;
     }

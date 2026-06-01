@@ -394,9 +394,9 @@ function renderAllResources() {
     <div class="phase-purpose">Every resource across all 8 phases — organized by topic area with the sequence to follow. Click any card to see details.</div>
   </div>
 
-  <div class="filter-bar" style="flex-wrap:wrap;gap:4px;">
+  <div class="filter-bar">
     <button class="filter-btn ${resourceFilter === 'all' ? 'active' : ''}" onclick="setResourceFilter('all')">All</button>
-    ${CATS.map(c => `<button class="filter-btn ${resourceFilter === c.k ? 'active' : ''}" onclick="setResourceFilter('${c.k}')">${c.i} ${c.l}</button>`).join('')}
+    ${CATS.map(c => `<button class="filter-btn ${resourceFilter === c.k ? 'active' : ''}" onclick="setResourceFilter('${c.k}')">${c.l}</button>`).join('')}
   </div>`;
 
   const activeCats = resourceFilter === 'all' ? CATS : CATS.filter(c => c.k === resourceFilter);
@@ -410,7 +410,7 @@ function renderAllResources() {
       : cat.l;
 
     h += `<div style="margin-top: 32px;">
-      <div class="section-title"><span class="icon">${cat.i}</span> <span>${combined}</span></div>
+      <div class="section-title"><span>${combined}</span></div>
       <div class="grid-1">`;
 
     items.forEach((item) => {

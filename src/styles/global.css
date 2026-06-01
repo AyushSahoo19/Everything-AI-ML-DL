@@ -537,14 +537,14 @@ a:hover {
 
 .filter-bar {
   display: flex;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 8px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
 }
 
 .filter-btn {
-  padding: 6px 14px;
-  border-radius: 20px;
+  padding: 9px 18px;
+  border-radius: 6px;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -553,6 +553,7 @@ a:hover {
   color: var(--text-secondary);
   transition: all 0.2s;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  white-space: nowrap;
 }
 
 .filter-btn:hover {

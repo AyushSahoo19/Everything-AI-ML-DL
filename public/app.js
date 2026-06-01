@@ -739,12 +739,7 @@ function renderAllResources() {
             <div class="seq-flagship-name">${seq.primary}</div>
           </div>
         </div>
-        <div class="seq-body">
-          <div class="seq-note">
-            <div class="seq-note-label">How to Follow</div>
-            <div class="seq-note-text">${seq.note}</div>
-          </div>
-          <div class="seq-steps">
+        <div class="seq-steps">
             ${seq.steps.map((step, si) => `<div class="seq-step">
               <div class="seq-step-line">
                 <div class="seq-step-num">${si + 1}</div>
@@ -765,7 +760,6 @@ function renderAllResources() {
                 </div>
               </div>
             </div>`).join('')}
-          </div>
         </div>
       </div>`;
     }

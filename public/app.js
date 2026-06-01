@@ -247,7 +247,11 @@ function buildNav() {
     </button>
   `).join('');
   
-  const sys = [{ k: 'updates', i: 'rss', l: 'Stay Updated' }, { k: 'guidance', i: 'compass', l: 'Guidance' }];
+  const sys = [
+    { k: 'allresources', i: 'book-open', l: 'All Resources' },
+    { k: 'updates', i: 'rss', l: 'Stay Updated' },
+    { k: 'guidance', i: 'compass', l: 'Guidance' }
+  ];
   
   snav.innerHTML = sys.map(s => `
     <button class="nav-btn ${cur === s.k ? 'active' : ''}" onclick="show('${s.k}')">
@@ -257,6 +261,86 @@ function buildNav() {
   `).join('');
   
   if (typeof lucide !== 'undefined') lucide.createIcons();
+}
+
+function renderAllResources() {
+  let h = `<div class="phase-header">
+    <div class="header-top">
+      <div class="phase-title-wrapper">
+        <div class="phase-icon"><i data-lucide="book-open"></i></div>
+        <div>
+          <h2 class="phase-title">All Resources</h2>
+        </div>
+      </div>
+      <div class="dots-menu">•••</div>
+    </div>
+    <div class="phase-purpose">Every resource across all 8 phases — organized by type and listed in the sequence you should follow. Click any card to see details.</div>
+  </div>`;
+
+  // Collect resources by type across all phases
+  const byType = { course: [], youtube: [], books: [], papers: [], repos: [], websites: [] };
+
+  PHASES.forEach((p, pi) => {
+    (p.topics || []).forEach((t, ti) => {
+      if (t.course) byType.course.push({ p, pi, ti, data: t.course, key: 'course' });
+      (t.youtube || []).forEach((y, i) => byType.youtube.push({ p, pi, ti, data: y, key: 'youtube', idx: i }));
+      (t.books || []).forEach((b, i) => byType.books.push({ p, pi, ti, data: b, key: 'books', idx: i }));
+      (t.papers || []).forEach((pp, i) => byType.papers.push({ p, pi, ti, data: pp, key: 'papers', idx: i }));
+      (t.repos || []).forEach((r, i) => byType.repos.push({ p, pi, ti, data: r, key: 'repos', idx: i }));
+      (t.websites || []).forEach((w, i) => byType.websites.push({ p, pi, ti, data: w, key: 'websites', idx: i }));
+    });
+  });
+
+  const sections = [
+    { key: 'course', icon: '🎓', label: 'Courses', badge: '<span class="badge-free">🎓 Course</span>' },
+    { key: 'youtube', icon: '▶️', label: 'YouTube Playlists & Videos', badge: '<span class="badge-paid" style="background: rgba(255,0,0,0.15); color: #ff6b6b;">▶️ YouTube</span>' },
+    { key: 'books', icon: '📚', label: 'Free Books & Textbooks', badge: null },
+    { key: 'papers', icon: '📄', label: 'Research Papers', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">📄 Paper</span>' },
+    { key: 'repos', icon: '🐙', label: 'GitHub Repositories', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">🐙 Repo</span>' },
+    { key: 'websites', icon: '🌐', label: 'Websites & Tools', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">🌐 Link</span>' }
+  ];
+
+  sections.forEach(section => {
+    const items = byType[section.key];
+    if (!items.length) return;
+
+    h += `<div style="margin-top: 36px;">
+      <div class="section-title"><span class="icon">${section.icon}</span> <span>${section.label} <span style="color:var(--text-muted);font-weight:400;font-size:13px;">(${items.length})</span></span></div>
+      <div class="grid-1">`;
+
+    items.forEach((item, idx) => {
+      const d = item.data;
+      const title = d.name || d.n || d.t || '';
+      const author = d.provider || d.s || d.a || '';
+      const desc = d.desc || d.d || '';
+      const phaseLabel = item.p.stage + ' — ' + item.p.label;
+      const topicLabel = item.p.topics[item.ti].title;
+
+      let badgeHtml = section.badge;
+      if (section.key === 'books') {
+        badgeHtml = d.free
+          ? '<span class="badge-free">📚 Free PDF</span>'
+          : '<span class="badge-paid">📚 Book</span>';
+      }
+
+      h += `<div class="card" style="margin-bottom:0;" onclick="openModal('${item.p.key}', ${item.ti}, '${section.key}', ${item.idx ?? 0})">
+        <div class="flex-between" style="margin-bottom:6px;">
+          <span class="card-title">${title}</span>
+          ${badgeHtml}
+        </div>
+        ${author ? `<div class="author-text" style="margin-bottom:4px;">${author}</div>` : ''}
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">
+          <span style="background:rgba(255,255,255,0.04);padding:2px 8px;border-radius:4px;">${phaseLabel}</span>
+          <span style="background:rgba(255,255,255,0.04);padding:2px 8px;border-radius:4px;margin-left:4px;">${topicLabel}</span>
+        </div>
+        <p class="text-sm">${desc}</p>
+      </div>`;
+    });
+
+    h += `</div></div>`;
+  });
+
+  return h;
 }
 
 function show(key) {
@@ -271,6 +355,7 @@ function show(key) {
   if (p) main.innerHTML = renderPhase(p);
   else if (key === 'updates') main.innerHTML = renderUpdates();
   else if (key === 'guidance') main.innerHTML = renderGuidance();
+  else if (key === 'allresources') main.innerHTML = renderAllResources();
   
   if (typeof lucide !== 'undefined') lucide.createIcons();
   buildNav();

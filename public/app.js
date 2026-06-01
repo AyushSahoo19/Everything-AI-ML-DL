@@ -297,136 +297,296 @@ function renderAllResources() {
   const SEQUENCES = {
     math: {
       primary: 'Essence of Linear Algebra (3Blue1Brown)',
-      note: 'Build mathematical intuition first, then layer on formalism.',
+      note: 'Build mathematical intuition first, then layer on formalism. Start with the visual series, then take a structured course, and keep the references handy.',
       steps: [
-        { label: 'Build intuition', items: [{ n: 'Essence of Linear Algebra — 3Blue1Brown', u: 'https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab' }, { n: 'Essence of Calculus — 3Blue1Brown', u: 'https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr' }] },
-        { label: 'Structured course', items: [{ n: 'Mathematics for ML — Imperial College (Coursera)' }, { n: 'Probabilistic ML — Duke (Coursera)' }] },
-        { label: 'Read & reference', items: [{ n: 'Matrix Calculus for Deep Learning (Parr & Howard)' }, { n: 'Seeing Theory — Brown University' }, { n: 'StatQuest — Statistics Fundamentals' }] }
+        { label: 'Build intuition', items: [
+          { n: 'Essence of Linear Algebra — 3Blue1Brown', u: 'https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab', d: 'Best visual foundation for vectors, matrices, and transformations. Watch this before any textbook to build lasting intuition.' },
+          { n: 'Essence of Calculus — 3Blue1Brown', u: 'https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr', d: 'Visual understanding of derivatives and integrals — essential for grasping backpropagation and gradient-based optimization.' }
+        ]},
+        { label: 'Structured course', items: [
+          { n: 'Mathematics for ML — Imperial College (Coursera)', d: 'Bridges high school math to ML-grade linear algebra, calculus, and statistics. Structured and practically focused.' },
+          { n: 'Probabilistic ML — Duke (Coursera)', d: 'Covers probability foundations needed for Bayesian reasoning, uncertainty estimation, and generative modeling.' }
+        ]},
+        { label: 'Read & reference', items: [
+          { n: 'Matrix Calculus for Deep Learning (Parr & Howard)', d: 'Concise reference connecting matrix derivatives directly to neural network training. Essential for reading ML papers.' },
+          { n: 'Seeing Theory — Brown University', d: 'Interactive visualizations that make probability concepts intuitive before diving into heavy mathematical notation.' },
+          { n: 'StatQuest — Statistics Fundamentals', d: 'Friendly, memorable explanations of statistical concepts. Perfect for quick reinforcement when you encounter unfamiliar terms.' }
+        ]}
       ]
     },
     prog: {
       primary: 'CS50P (Harvard) + Python Data Science Handbook',
-      note: 'Master Python, NumPy, Pandas, and Matplotlib — these are prerequisites for everything else.',
+      note: 'Master Python, NumPy, Pandas, and Matplotlib — these are prerequisites for everything that follows. Write code daily.',
       steps: [
-        { label: 'Python fundamentals', items: [{ n: 'CS50P — Harvard (edX)' }, { n: 'Automate the Boring Stuff (Al Sweigart)' }] },
-        { label: 'Numerical computing', items: [{ n: 'NumPy Crash Course — freeCodeCamp' }, { n: 'Python Data Science Handbook (VanderPlas) — NumPy' }] },
-        { label: 'Data wrangling & viz', items: [{ n: 'Kaggle Pandas Course' }, { n: 'Keith Galli Pandas Tutorial' }, { n: 'Corey Schafer Matplotlib Tutorial' }, { n: 'Seaborn Gallery' }] }
+        { label: 'Python fundamentals', items: [
+          { n: 'CS50P — Harvard (edX)', d: 'Harvard\'s rigorous Python introduction. Teaches computational thinking alongside syntax — builds deeper fundamentals than most Python courses.' },
+          { n: 'Automate the Boring Stuff (Al Sweigart)', d: 'Learn Python through practical automation projects. Keeps motivation high while you build real programming fluency.' }
+        ]},
+        { label: 'Numerical computing', items: [
+          { n: 'NumPy Crash Course — freeCodeCamp', d: 'Fast, hands-on NumPy intro. This library is the foundation of all numerical computing in ML — master it early.' },
+          { n: 'Python Data Science Handbook (VanderPlas) — NumPy', d: 'Comprehensive NumPy reference with practical data science patterns. Keep this as your desk companion throughout the journey.' }
+        ]},
+        { label: 'Data wrangling & viz', items: [
+          { n: 'Kaggle Pandas Course', d: 'Learn data manipulation through small, focused exercises. Fastest way to become productive with DataFrames.' },
+          { n: 'Keith Galli Pandas Tutorial', d: 'Real-world dataset walkthroughs that build practical data wrangling skills. See exactly how professionals clean and transform data.' },
+          { n: 'Corey Schafer Matplotlib Tutorial', d: 'Clear, methodical Matplotlib tutorials — the gold standard for Python visualization instruction. Covers everything from basics to advanced plots.' },
+          { n: 'Seaborn Gallery', d: 'Visual reference for statistical plots. Steal good design ideas for your own data exploration and presentation.' }
+        ]}
       ]
     },
     cml: {
       primary: 'Andrew Ng ML Specialization (Coursera)',
-      note: 'This is the most important phase of your entire ML journey. Do not rush it.',
+      note: 'This is the most important phase of your entire ML journey. Do not rush it — complete every assignment and understand the math behind each algorithm.',
       steps: [
-        { label: 'Core course', items: [{ n: 'Machine Learning Specialization — Andrew Ng (Coursera)' }] },
-        { label: 'Deepen with textbook', items: [{ n: 'ISLP — Introduction to Statistical Learning (James, Witten, Hastie, Tibshirani)' }] },
-        { label: 'Practice', items: [{ n: 'Hands-On Machine Learning (Géron)' }, { n: 'Scikit-Learn Documentation Guide' }, { n: 'ML-From-Scratch' }] },
-        { label: 'Advanced topics', items: [{ n: 'XGBoost Paper (Chen & Guestrin)' }, { n: 'Random Forests Paper (Breiman)' }] }
+        { label: 'Core course', items: [
+          { n: 'Machine Learning Specialization — Andrew Ng (Coursera)', d: 'The definitive ML course. Explains algorithms, bias-variance tradeoffs, and evaluation with unmatched clarity. Complete every lab.' }
+        ]},
+        { label: 'Deepen with textbook', items: [
+          { n: 'ISLP — Introduction to Statistical Learning (James, Witten, Hastie, Tibshirani)', d: 'The most accessible rigorous ML textbook. Bridges math and application — read it alongside the course for deeper understanding.' }
+        ]},
+        { label: 'Practice', items: [
+          { n: 'Hands-On Machine Learning (Geron)', d: 'Practical end-to-end ML projects with Scikit-Learn. Write real code from chapter one — this is how you internalize the theory.' },
+          { n: 'Scikit-Learn Documentation Guide', d: 'Official docs with best practices, examples, and pipeline patterns. You will reference this daily when building ML systems.' },
+          { n: 'ML-From-Scratch', d: 'NumPy implementations of 30+ ML algorithms. Removing framework abstractions deepens your understanding of every model.' }
+        ]},
+        { label: 'Advanced topics', items: [
+          { n: 'XGBoost Paper (Chen & Guestrin)', d: 'Behind every Kaggle winner. Understanding gradient boosting at this level teaches you ensemble theory, regularization, and optimization.' },
+          { n: 'Random Forests Paper (Breiman)', d: 'Foundational ensemble method from one of ML\'s pioneers. Essential for understanding how bagging reduces variance and improves stability.' }
+        ]}
       ]
     },
     dlcore: {
       primary: 'Deep Learning Specialization (Andrew Ng)',
-      note: 'Understand neural network internals before using frameworks.',
+      note: 'Understand neural network internals before using high-level frameworks. Build from first principles.',
       steps: [
-        { label: 'Foundations', items: [{ n: 'Deep Learning Specialization — Andrew Ng (Coursera)' }, { n: 'Neural Networks & Deep Learning (Michael Nielsen)' }] },
-        { label: 'Visual intuition', items: [{ n: 'Neural Networks — 3Blue1Brown' }, { n: 'Backpropagation Calculus — 3Blue1Brown' }] },
-        { label: 'Architectures', items: [{ n: 'Stanford CS231n — CNNs for Visual Recognition' }, { n: 'Stanford CS224n — NLP with Deep Learning' }] },
-        { label: 'Key papers', items: [{ n: 'Dropout Paper (Srivastava et al.)' }, { n: 'Adam Paper (Kingma & Ba)' }, { n: 'ResNet Paper (He et al.)' }] }
+        { label: 'Foundations', items: [
+          { n: 'Deep Learning Specialization — Andrew Ng (Coursera)', d: 'Systematic foundation covering architectures, hyperparameters, regularization, and optimization. The canonical DL starting point.' },
+          { n: 'Neural Networks & Deep Learning (Michael Nielsen)', d: 'Interactive, code-first approach. You build a neural network from scratch — this is where everything clicks.' }
+        ]},
+        { label: 'Visual intuition', items: [
+          { n: 'Neural Networks — 3Blue1Brown', d: 'The best visual explanation of what neural networks actually compute. Watch before and after the course — you will notice new details each time.' },
+          { n: 'Backpropagation Calculus — 3Blue1Brown', d: 'See exactly how gradients flow through a network step by step. Demystifies the single most important algorithm in deep learning.' }
+        ]},
+        { label: 'Architectures', items: [
+          { n: 'Stanford CS231n — CNNs for Visual Recognition', d: 'The definitive CNN course. From image classification through detection, segmentation, and modern architectures with rigorous assignments.' },
+          { n: 'Stanford CS224n — NLP with Deep Learning', d: 'The standard NLP course covering RNNs, attention mechanisms, and Transformers. Invaluable for understanding sequence modeling.' }
+        ]},
+        { label: 'Key papers', items: [
+          { n: 'Dropout Paper (Srivastava et al.)', d: 'Elegant regularization that prevents co-adaptation of neurons. A core technique for training deep networks without overfitting.' },
+          { n: 'Adam Paper (Kingma & Ba)', d: 'The default optimizer in modern deep learning. Understanding adaptive learning rates is essential for efficient training.' },
+          { n: 'ResNet Paper (He et al.)', d: 'Skip connections that made training very deep networks possible. This single idea reshaped nearly every architecture that followed.' }
+        ]}
       ]
     },
     papers: {
       primary: 'Attention Is All You Need (Vaswani et al., 2017)',
-      note: 'Start here, then follow the citation chain. Read in chronological order to see how ideas built on each other.',
+      note: 'Start here, then follow the citation chain forward and backward. Read in chronological order to see how ideas built on each other.',
       steps: [
-        { label: 'The Transformer era (2017–2018)', items: [{ n: 'Attention Is All You Need (Vaswani et al.)' }, { n: 'BERT (Devlin et al.)' }] },
-        { label: 'Scaling & few-shot (2020–2022)', items: [{ n: 'GPT-3 — Language Models are Few-Shot Learners' }, { n: 'Scaling Laws (Kaplan et al.)' }, { n: 'Chinchilla (Hoffmann et al.)' }] },
-        { label: 'Alignment & fine-tuning (2022–2023)', items: [{ n: 'InstructGPT (Ouyang et al.)' }, { n: 'Constitutional AI (Bai et al.)' }, { n: 'LoRA (Hu et al.)' }] },
-        { label: 'Frontier understanding', items: [{ n: 'Residual Networks (He et al.)' }, { n: 'ML Technical Debt (Sculley et al.)' }, { n: 'Dropout (Srivastava et al.)' }, { n: 'Adam (Kingma & Ba)' }] }
+        { label: 'The Transformer era (2017-2018)', items: [
+          { n: 'Attention Is All You Need (Vaswani et al.)', d: 'The most important ML paper of the decade. Introduced the Transformer architecture that powers every major AI system today.' },
+          { n: 'BERT (Devlin et al.)', d: 'Introduced bidirectional pre-training for language understanding. Foundational for encoder models and transfer learning in NLP.' }
+        ]},
+        { label: 'Scaling & few-shot (2020-2022)', items: [
+          { n: 'GPT-3 — Language Models are Few-Shot Learners', d: 'Established scaling laws and in-context learning. Shaped the modern understanding of emergent capabilities in large models.' },
+          { n: 'Scaling Laws (Kaplan et al.)', d: 'Showed performance follows predictable power-law scaling with compute, data, and parameters. Guides every major training decision.' },
+          { n: 'Chinchilla (Hoffmann et al.)', d: 'Proved most LLMs are undertrained — for optimal performance, scale model and data proportionally. Changed how the field trains.' }
+        ]},
+        { label: 'Alignment & fine-tuning (2022-2023)', items: [
+          { n: 'InstructGPT (Ouyang et al.)', d: 'Introduced RLHF for aligning language models with human preferences. The technique behind ChatGPT\'s helpful and safe behavior.' },
+          { n: 'Constitutional AI (Bai et al.)', d: 'Alignment without human labels — uses self-supervision and principles. Key technique for scalable AI safety.' },
+          { n: 'LoRA (Hu et al.)', d: 'Parameter-efficient fine-tuning that made adapting large models practical. The standard method for customizing LLMs.' }
+        ]},
+        { label: 'Frontier understanding', items: [
+          { n: 'Residual Networks (He et al.)', d: 'Skip connections explained from first principles. This architectural pattern appears in nearly every modern deep network.' },
+          { n: 'ML Technical Debt (Sculley et al.)', d: 'Essential reading on hidden maintenance costs of ML systems. Shapes how you think about production engineering from day one.' },
+          { n: 'Dropout (Srivastava et al.)', d: 'A simple, remarkably effective regularization technique. Understanding it teaches broader principles of preventing overfitting.' },
+          { n: 'Adam (Kingma & Ba)', d: 'Adaptive moment estimation — the optimizer you will use most. Understanding its mechanics helps debug training failures.' }
+        ]}
       ]
     },
     nlp: {
       primary: 'Stanford CS224n + HuggingFace NLP Course',
-      note: 'Build from classical NLP through transformers to LLM fine-tuning.',
+      note: 'Build from classical sequence models through transformers to LLM fine-tuning. Implement what you learn.',
       steps: [
-        { label: 'Course foundation', items: [{ n: 'Stanford CS224n — NLP with Deep Learning' }, { n: 'HuggingFace NLP Course' }] },
-        { label: 'Build from scratch', items: [{ n: 'Let\'s build GPT from scratch — Andrej Karpathy' }, { n: 'Build a Large Language Model (Sebastian Raschka)' }] },
-        { label: 'Fine-tuning & alignment', items: [{ n: 'HuggingFace Transformers Docs + PEFT' }, { n: 'LoRA Paper' }, { n: 'Stanford CS336 — LLM Bootcamp' }] },
-        { label: 'Reference', items: [{ n: 'BERT Paper' }, { n: 'GPT-3 Paper' }, { n: 'Constitutional AI Paper' }] }
+        { label: 'Course foundation', items: [
+          { n: 'Stanford CS224n — NLP with Deep Learning', d: 'Covers RNNs, attention, Transformers, and modern architectures with rigorous assignments. The gold standard NLP course.' },
+          { n: 'HuggingFace NLP Course', d: 'Practical NLP using modern libraries — tokenization, training pipelines, and deployment. Bridges theory to production-ready code.' }
+        ]},
+        { label: 'Build from scratch', items: [
+          { n: 'Let\'s build GPT from scratch — Andrej Karpathy', d: 'Implement a GPT from scratch in a single file. Unparalleled understanding of how Transformers actually generate text.' },
+          { n: 'Build a Large Language Model (Sebastian Raschka)', d: 'Step-by-step LLM construction from tokenization to pretraining. Clear code examples make complex concepts concrete.' }
+        ]},
+        { label: 'Fine-tuning & alignment', items: [
+          { n: 'HuggingFace Transformers Docs + PEFT', d: 'Practical reference for fine-tuning any Transformer. Parameter-efficient methods (LoRA, QLoRA) make customization feasible on consumer hardware.' },
+          { n: 'LoRA Paper', d: 'Understanding LoRA deeply helps you choose the right rank, target modules, and hyperparameters for your fine-tuning tasks.' },
+          { n: 'Stanford CS336 — LLM Bootcamp', d: 'Cutting-edge LLM training bootcamp covering alignment, evaluation, and deployment. Bridges research and production practice.' }
+        ]},
+        { label: 'Reference', items: [
+          { n: 'BERT Paper', d: 'Essential for understanding encoder-only architectures and the impact of bidirectional pretraining on language understanding tasks.' },
+          { n: 'GPT-3 Paper', d: 'The paper that defined the scaling paradigm. Understanding it is critical for grasping why and how large models work.' },
+          { n: 'Constitutional AI Paper', d: 'Key alignment technique from Anthropic. Important for understanding the safety landscape beyond RLHF.' }
+        ]}
       ]
     },
     cv: {
       primary: 'Stanford CS231n',
-      note: 'Start with CNNs, then move to modern transformer-based vision.',
+      note: 'Start with CNNs, understand their limitations, then move to transformer-based vision. Implement at least one architecture from scratch.',
       steps: [
-        { label: 'Core course', items: [{ n: 'Stanford CS231n — CNNs for Visual Recognition' }] },
-        { label: 'Build understanding', items: [{ n: 'ResNet Paper (He et al.)' }, { n: 'Vision Transformer (ViT) Paper (Dosovitskiy et al.)' }] },
-        { label: 'Modern systems', items: [{ n: 'Segment Anything (SAM) — Meta AI' }, { n: 'YOLO — Real-Time Object Detection' }, { n: 'PyTorch Image Models (timm)' }] }
+        { label: 'Core course', items: [
+          { n: 'Stanford CS231n — CNNs for Visual Recognition', d: 'The definitive CV course — covers image classification, detection, segmentation, and GANs with rigorous math and programming assignments.' }
+        ]},
+        { label: 'Build understanding', items: [
+          { n: 'ResNet Paper (He et al.)', d: 'Skip connections are the most influential architectural innovation in CV. Understanding them is key to modern vision model design.' },
+          { n: 'Vision Transformer (ViT) Paper (Dosovitskiy et al.)', d: 'Proved CNNs are not necessary for vision — pure Transformers on image patches achieve SOTA. A paradigm shift in CV architecture.' }
+        ]},
+        { label: 'Modern systems', items: [
+          { n: 'Segment Anything (SAM) — Meta AI', d: 'Foundation model for segmentation with zero-shot generalization. Represents the shift toward general-purpose vision models.' },
+          { n: 'YOLO — Real-Time Object Detection', d: 'The industry standard for real-time detection. Teaches you to balance speed, accuracy, and architectural efficiency.' },
+          { n: 'PyTorch Image Models (timm)', d: 'Curated collection of SOTA vision models with pretrained weights. Invaluable for rapid prototyping and transfer learning.' }
+        ]}
       ]
     },
     rl: {
       primary: 'David Silver RL Course (DeepMind / YouTube)',
-      note: 'RL has steep prerequisites — ensure you have strong probability and DL first.',
+      note: 'RL has steep prerequisites — ensure strong probability and deep learning fundamentals first. The math is non-negotiable here.',
       steps: [
-        { label: 'Core course', items: [{ n: 'David Silver — Reinforcement Learning (DeepMind)' }] },
-        { label: 'Textbook', items: [{ n: 'Sutton & Barto — Reinforcement Learning: An Introduction' }] },
-        { label: 'Key papers', items: [{ n: 'DQN — Playing Atari with Deep RL (Mnih et al.)' }, { n: 'PPO — Proximal Policy Optimization (Schulman et al.)' }] },
-        { label: 'Practice', items: [{ n: 'HuggingFace Deep RL Course' }, { n: 'OpenAI Gym / Farama Gymnasium' }] }
+        { label: 'Core course', items: [
+          { n: 'David Silver — Reinforcement Learning (DeepMind)', d: 'The definitive RL course by DeepMind\'s lead. Rigorous, comprehensive, and directly from one of the field\'s principal contributors.' }
+        ]},
+        { label: 'Textbook', items: [
+          { n: 'Sutton & Barto — Reinforcement Learning: An Introduction', d: 'The RL bible. Every algorithm from multi-armed bandits to policy gradients, presented with mathematical depth and clarity.' }
+        ]},
+        { label: 'Key papers', items: [
+          { n: 'DQN — Playing Atari with Deep RL (Mnih et al.)', d: 'The paper that launched deep RL. First algorithm to learn directly from pixels — a landmark in combining deep learning with RL.' },
+          { n: 'PPO — Proximal Policy Optimization (Schulman et al.)', d: 'The default RL algorithm in production systems and RLHF. Stable, simple, and sample-efficient — essential for modern RL work.' }
+        ]},
+        { label: 'Practice', items: [
+          { n: 'HuggingFace Deep RL Course', d: 'Hands-on RL with practical implementations using Stable-Baselines3. Train agents in simulated environments and see algorithms in action.' },
+          { n: 'OpenAI Gym / Farama Gymnasium', d: 'Standard RL benchmark environment suite. Essential for testing, comparing, and debugging RL algorithms in a consistent framework.' }
+        ]}
       ]
     },
     genai: {
       primary: 'HuggingFace Diffusion Models Course',
-      note: 'Generative AI builds on deep learning fundamentals. Complete Stage 3 first.',
+      note: 'Generative AI builds directly on deep learning fundamentals. Complete Stage 3 (Deep Learning Core) first before diving here.',
       steps: [
-        { label: 'Course', items: [{ n: 'HuggingFace Diffusion Models Course' }, { n: 'MIT Flow Matching & Diffusion Models (2026)' }] },
-        { label: 'Theory deep-dive', items: [{ n: 'What are Diffusion Models? — Lilian Weng' }, { n: 'The Annotated Diffusion Model — Hugging Face' }] },
-        { label: 'Key papers', items: [{ n: 'DDPM (Ho et al., 2020)' }, { n: 'Latent Diffusion / Stable Diffusion (Rombach et al.)' }, { n: 'DiT — Diffusion Transformers (Peebles & Xie)' }] },
-        { label: 'Build from scratch', items: [{ n: 'Diffusion 101 — PyTorch Implementation' }, { n: 'HuggingFace Diffusers Library' }] }
+        { label: 'Course', items: [
+          { n: 'HuggingFace Diffusion Models Course', d: 'Practical training on diffusion models from theory to Stable Diffusion fine-tuning. The most hands-on path into generative AI.' },
+          { n: 'MIT Flow Matching & Diffusion Models (2026)', d: '2026 cutting-edge course — build a latent diffusion model from scratch covering SDEs, score matching, classifier-free guidance, and DiT.' }
+        ]},
+        { label: 'Theory deep-dive', items: [
+          { n: 'What are Diffusion Models? — Lilian Weng', d: 'Comprehensive survey covering DDPM, DDIM, score matching, and guidance. The canonical technical reference for diffusion math.' },
+          { n: 'The Annotated Diffusion Model — Hugging Face', d: 'DDPM code and math presented side-by-side. Best way to understand implementation details before building your own.' }
+        ]},
+        { label: 'Key papers', items: [
+          { n: 'DDPM (Ho et al., 2020)', d: 'The original denoising diffusion paper. Essential for understanding the Markov chain formulation and probabilistic foundation.' },
+          { n: 'Latent Diffusion / Stable Diffusion (Rombach et al.)', d: 'Made diffusion practical by operating in latent space. The paper behind the generative AI explosion — efficiency meets quality.' },
+          { n: 'DiT — Diffusion Transformers (Peebles & Xie)', d: 'Replaced U-Net with Transformers for diffusion. The architecture powering SD3, Flux, and Sora — the future of generative architecture.' }
+        ]},
+        { label: 'Build from scratch', items: [
+          { n: 'Diffusion 101 — PyTorch Implementation', d: 'Beginner-friendly notebooks for DDIM, Heun, and DPM-Solver samplers. Build and train diffusion models from scratch with PyTorch.' },
+          { n: 'HuggingFace Diffusers Library', d: 'Industry-standard library for inference and training of diffusion models. Essential toolkit for any generative AI project.' }
+        ]}
       ]
     },
     repos: {
       primary: 'micrograd + Let\'s build GPT (Andrej Karpathy)',
-      note: 'These repos let you build neural networks from scratch. Run the code, break it, fix it.',
+      note: 'These repos let you build neural networks from absolute scratch. Run the code, break it, fix it — this is how you truly learn.',
       steps: [
-        { label: 'Build a neural net from scratch', items: [{ n: 'micrograd — Karpathy' }, { n: 'nn-zero-to-hero — Karpathy' }] },
-        { label: 'Language modeling from scratch', items: [{ n: 'makemore — Karpathy' }, { n: 'Let\'s build GPT — Karpathy' }] },
-        { label: 'Implement ML algorithms', items: [{ n: 'ML-From-Scratch' }, { n: 'Made With ML — Goku Mohandas' }] },
-        { label: 'Production & research', items: [{ n: 'LLaMA 3 — Meta' }, { n: 'Transformers — HuggingFace' }] }
+        { label: 'Build a neural net from scratch', items: [
+          { n: 'micrograd — Karpathy', d: 'A 100-line autograd engine. Build backpropagation from absolute zero — this is the single best way to truly understand how gradients work.' },
+          { n: 'nn-zero-to-hero — Karpathy', d: 'Complete neural network implementation series progressing from tiny models to modern architectures with fully annotated code.' }
+        ]},
+        { label: 'Language modeling from scratch', items: [
+          { n: 'makemore — Karpathy', d: 'Character-level language modeling implemented step by step. Perfect for understanding autoregressive generation and next-token prediction.' },
+          { n: 'Let\'s build GPT — Karpathy', d: 'Build a GPT from scratch in one Python file. Unparalleled understanding of Transformers through hands-on implementation.' }
+        ]},
+        { label: 'Implement ML algorithms', items: [
+          { n: 'ML-From-Scratch', d: 'NumPy implementations of 30+ ML algorithms. Remove framework abstractions to learn what each model actually computes under the hood.' },
+          { n: 'Made With ML — Goku Mohandas', d: 'Full production ML project template with testing, CI/CD, and deployment best practices. Bridges the gap between notebooks and production.' }
+        ]},
+        { label: 'Production & research', items: [
+          { n: 'LLaMA 3 — Meta', d: 'State-of-the-art open LLM. Study the architecture, training distribution, and inference optimizations of a production-grade model.' },
+          { n: 'Transformers — HuggingFace', d: 'The industry-standard Transformers library with thousands of pretrained models. Essential toolkit for any NLP or multimodal project.' }
+        ]}
       ]
     },
     mlops: {
       primary: 'Made With ML (Goku Mohandas)',
-      note: 'MLOps is about reliability and reproducibility. Learn it after you have shipped at least one model.',
+      note: 'MLOps is about reliability and reproducibility. Learn it after you have shipped at least one model end-to-end.',
       steps: [
-        { label: 'Course', items: [{ n: 'Made With ML — Goku Mohandas' }, { n: 'Full Stack Deep Learning — UC Berkeley' }] },
-        { label: 'Books', items: [{ n: 'Designing Machine Learning Systems (Chip Huyen)' }, { n: 'Machine Learning Engineering (Andriy Burkov)' }] },
-        { label: 'Tools & practice', items: [{ n: 'Weights & Biases Documentation' }, { n: 'MLflow Documentation' }, { n: 'FastAPI for Model Serving' }] },
-        { label: 'Key paper', items: [{ n: 'ML Technical Debt (Sculley et al., Google)' }] }
+        { label: 'Course', items: [
+          { n: 'Made With ML — Goku Mohandas', d: 'Full-stack ML project tutorial covering version control, testing, CI/CD, and deployment. The most practical MLOps introduction available.' },
+          { n: 'Full Stack Deep Learning — UC Berkeley', d: 'Production ML course covering deployment infrastructure, monitoring, data pipelines, and team workflows from experienced practitioners.' }
+        ]},
+        { label: 'Books', items: [
+          { n: 'Designing Machine Learning Systems (Chip Huyen)', d: 'The definitive ML systems design book. Covers feature stores, data engineering, monitoring, and production architecture patterns in depth.' },
+          { n: 'Machine Learning Engineering (Andriy Burkov)', d: 'Concise, practical guide to building reliable ML systems. Excellent reference for common production patterns and pitfalls.' }
+        ]},
+        { label: 'Tools & practice', items: [
+          { n: 'Weights & Biases Documentation', d: 'Industry-standard experiment tracking, hyperparameter optimization, and model registry. Essential for reproducible ML research.' },
+          { n: 'MLflow Documentation', d: 'Open-source ML lifecycle management covering experiment tracking, model packaging, and deployment. The most widely adopted MLOps framework.' },
+          { n: 'FastAPI for Model Serving', d: 'High-performance Python API framework for serving ML models. The standard choice for production inference endpoints.' }
+        ]},
+        { label: 'Key paper', items: [
+          { n: 'ML Technical Debt (Sculley et al., Google)', d: 'Essential reading on hidden maintenance costs of ML systems. Understanding these pitfalls shapes every production engineering decision.' }
+        ]}
       ]
     },
     research: {
       primary: 'PapersWithCode + Connected Papers',
-      note: 'Reading papers is a skill. Use the three-pass method: abstract → figures → full read.',
+      note: 'Reading papers is a skill. Use the three-pass method: abstract and figures first, then full read. Build this habit early.',
       steps: [
-        { label: 'Discovery tools', items: [{ n: 'Papers With Code' }, { n: 'HuggingFace Daily Papers' }, { n: 'Connected Papers' }, { n: 'Semantic Scholar' }] },
-        { label: 'Reading method', items: [{ n: 'How to Read a Paper (Keshav)' }] }
+        { label: 'Discovery tools', items: [
+          { n: 'Papers With Code', d: 'Research papers with linked implementations. The fastest way to reproduce SOTA results and understand what each contribution actually does.' },
+          { n: 'HuggingFace Daily Papers', d: 'Curated daily digest of the most impactful new ML research. Stay current without drowning in arXiv volume.' },
+          { n: 'Connected Papers', d: 'Interactive graph exploring paper citations and related work. Discover the intellectual lineage of any research area visually.' },
+          { n: 'Semantic Scholar', d: 'AI-powered academic search with structured metadata, citation graphs, and research summaries. Find relevant papers efficiently.' }
+        ]},
+        { label: 'Reading method', items: [
+          { n: 'How to Read a Paper (Keshav)', d: 'The definitive three-pass method for efficient paper reading. Learn this systematic approach before tackling your first paper.' }
+        ]}
       ]
     },
     blogs: {
       primary: 'The Batch (DeepLearning.AI) — weekly must-read',
-      note: 'Set up a weekly reading habit. These are the highest-signal sources in the field.',
+      note: 'Set up a weekly reading habit. These are the highest-signal sources in the field — each one is carefully curated or written by leading researchers.',
       steps: [
-        { label: 'Weekly must-reads', items: [{ n: 'The Batch — DeepLearning.AI' }, { n: 'TLDR AI — 5-min daily digest' }] },
-        { label: 'Deep technical dives', items: [{ n: 'Ahead of AI — Sebastian Raschka' }, { n: 'Lilian Weng\'s Blog' }, { n: 'Jay Alammar\'s Visual Explanations' }] },
-        { label: 'Research & analysis', items: [{ n: 'Import AI — Jack Clark' }, { n: 'distill.pub — Interactive Research' }] }
+        { label: 'Weekly must-reads', items: [
+          { n: 'The Batch — DeepLearning.AI', d: 'Weekly curated AI news and breakthroughs from Andrew Ng\'s team. The most respected industry digest — read every Friday.' },
+          { n: 'TLDR AI — 5-min daily digest', d: 'Five-minute daily AI news summary. Fastest way to stay informed without context switching or information overload.' }
+        ]},
+        { label: 'Deep technical dives', items: [
+          { n: 'Ahead of AI — Sebastian Raschka', d: 'Deep technical posts on LLMs, transformers, and training methods from a leading researcher-practitioner. Each post is a mini-lesson.' },
+          { n: 'Lilian Weng\'s Blog', d: 'Comprehensive survey-style blog posts that each function as a graduate-level lecture. The gold standard for ML technical writing.' },
+          { n: 'Jay Alammar\'s Visual Explanations', d: 'The best visual explanations of Transformers, attention, and embeddings. Essential for conceptual understanding — share these with your study group.' }
+        ]},
+        { label: 'Research & analysis', items: [
+          { n: 'Import AI — Jack Clark', d: 'Long-running newsletter analyzing AI policy, safety, hardware, and industry trends. Broadens perspective beyond just the technical.' },
+          { n: 'distill.pub — Interactive Research', d: 'Interactive research articles with explorable explanations. The gold standard for communicating complex ML concepts clearly.' }
+        ]}
       ]
     },
     frontier: {
       primary: 'AI Index Report (Stanford HAI) + arXiv cs.LG',
-      note: 'Stay current by reading one paper and one newsletter per week.',
+      note: 'Stay current by reading one paper and one newsletter per week. Breadth matters as much as depth at this stage.',
       steps: [
-        { label: 'Big picture', items: [{ n: 'Stanford HAI 2026 AI Index Report' }] },
-        { label: 'Courses to broaden', items: [{ n: 'fast.ai — Practical Deep Learning' }, { n: 'MIT 6.S191 — Intro to Deep Learning' }, { n: 'DeepLearning.AI Short Courses' }] },
-        { label: 'Papers to read', items: [{ n: 'Scaling Laws (Kaplan et al.)' }, { n: 'Chinchilla (Hoffmann et al.)' }] },
-        { label: 'Stay updated', items: [{ n: 'arXiv cs.LG / cs.AI / cs.CL' }, { n: 'HuggingFace Daily Papers' }] }
+        { label: 'Big picture', items: [
+          { n: 'Stanford HAI 2026 AI Index Report', d: 'The most comprehensive annual AI progress report tracking technical, economic, and policy dimensions. Essential for strategic perspective.' }
+        ]},
+        { label: 'Courses to broaden', items: [
+          { n: 'fast.ai — Practical Deep Learning', d: 'Top-down teaching philosophy — build production models immediately, then layer theory. Reframes how you think about learning ML.' },
+          { n: 'MIT 6.S191 — Introduction to Deep Learning', d: 'MIT\'s annually updated intro course covering latest research alongside foundations. Broad, rigorous, and current.' },
+          { n: 'DeepLearning.AI Short Courses', d: 'Focused 1-2 hour courses on RAG, agents, fine-tuning, multimodal, and safety. Practical skill boosters from industry leaders.' }
+        ]},
+        { label: 'Papers to read', items: [
+          { n: 'Scaling Laws (Kaplan et al.)', d: 'Understand the power-law relationships that govern model performance. These insights shape strategic decisions across the entire field.' },
+          { n: 'Chinchilla (Hoffmann et al.)', d: 'Optimal compute allocation between model size and data. Essential for understanding why data quality matters as much as model scale.' }
+        ]},
+        { label: 'Stay updated', items: [
+          { n: 'arXiv cs.LG / cs.AI / cs.CL', d: 'The primary ML research feed — new papers published daily. Bookmark these three categories and skim titles weekly.' },
+          { n: 'HuggingFace Daily Papers', d: 'Curated daily selection of the most impactful new papers. Saves hours of arXiv browsing while keeping you at the frontier.' }
+        ]}
       ]
     }
   };
@@ -565,29 +725,43 @@ function renderAllResources() {
     // Learning sequence (only when viewing a single category)
     if (resourceFilter !== 'all' && SEQUENCES[cat.k]) {
       const seq = SEQUENCES[cat.k];
-      h += `<div style="margin-bottom:24px;padding:20px 24px;border:1px solid rgba(255,255,255,0.08);border-radius:10px;background:linear-gradient(145deg,rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.01) 100%);">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--text-secondary);">~</div>
-            <span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-secondary);">Learning Sequence</span>
+      h += `<div class="seq-section">
+        <div class="seq-header">
+          <div class="seq-header-left">
+            <div class="seq-icon">↗</div>
+            <div>
+              <div class="seq-meta">Sequenced Path</div>
+              <div class="seq-title">Learning Sequence</div>
+            </div>
           </div>
-          <div style="font-size:12px;color:var(--text-link);font-weight:500;">Flagship: ${seq.primary}</div>
+          <div class="seq-flagship">
+            <div class="seq-flagship-label">Flagship Resource</div>
+            <div class="seq-flagship-name">${seq.primary}</div>
+          </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 2fr;gap:20px;">
-          <div style="padding:12px 14px;background:rgba(255,255,255,0.03);border-radius:8px;border-left:3px solid var(--text-link);">
-            <div style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:4px;">How to Follow</div>
-            <div style="font-size:13px;color:var(--text-primary);line-height:1.5;">${seq.note}</div>
+        <div class="seq-body">
+          <div class="seq-note">
+            <div class="seq-note-label">How to Follow</div>
+            <div class="seq-note-text">${seq.note}</div>
           </div>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            ${seq.steps.map((step, si) => `<div style="display:flex;gap:14px;">
-              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:24px;">
-                <div style="width:24px;height:24px;border-radius:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:var(--text-secondary);flex-shrink:0;">${si + 1}</div>
-                ${si < seq.steps.length - 1 ? '<div style="width:1px;flex:1;min-height:8px;background:rgba(255,255,255,0.06);"></div>' : ''}
+          <div class="seq-steps">
+            ${seq.steps.map((step, si) => `<div class="seq-step">
+              <div class="seq-step-line">
+                <div class="seq-step-num">${si + 1}</div>
+                ${si < seq.steps.length - 1 ? '<div class="seq-step-connector"></div>' : ''}
               </div>
-              <div style="flex:1;padding-bottom:${si < seq.steps.length - 1 ? '4px' : '0'};">
-                <div style="font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:8px;">${step.label}</div>
-                <div style="display:flex;flex-direction:column;gap:4px;">
-                  ${step.items.map(item => `<div style="padding:7px 12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);border-radius:6px;font-size:12px;color:var(--text-primary);line-height:1.4;">${item.n}</div>`).join('')}
+              <div class="seq-step-content">
+                <div class="seq-step-label">${step.label}</div>
+                <div class="seq-cards">
+                  ${step.items.map(function(item) {
+                    var cls = item.u ? ' seq-card-link' : '';
+                    var click = item.u ? ' onclick="window.open(\'' + item.u.replace(/'/g, "\\'") + '\',\'_blank\')"' : '';
+                    var title = item.n;
+                    var desc = item.d ? '<div class="seq-card-desc">' + item.d + '</div>' : '';
+                    return '<div class="seq-card' + cls + '"' + click + '>' +
+                      '<div class="seq-card-title">' + title + '</div>' + desc +
+                      '</div>';
+                  }).join('')}
                 </div>
               </div>
             </div>`).join('')}

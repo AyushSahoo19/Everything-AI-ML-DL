@@ -270,6 +270,117 @@ function buildNav() {
 }
 
 function renderAllResources() {
+  const CATS = [
+    { k: 'math',     i: '⊜', l: 'Mathematics & Theory' },
+    { k: 'prog',     i: '⎔', l: 'Programming & Engineering' },
+    { k: 'cml',      i: '⊟', l: 'Classical ML' },
+    { k: 'dlcore',   i: '⊡', l: 'Deep Learning — Core' },
+    { k: 'papers',   i: '◆', l: 'Landmark Papers' },
+    { k: 'nlp',      i: '⊳', l: 'NLP & LLMs' },
+    { k: 'cv',       i: '◈', l: 'Computer Vision' },
+    { k: 'rl',       i: '▶', l: 'Reinforcement Learning' },
+    { k: 'genai',    i: '◇', l: 'Generative AI' },
+    { k: 'repos',    i: '⊞', l: 'GitHub Repositories' },
+    { k: 'mlops',    i: '◎', l: 'MLOps & Production' },
+    { k: 'research', i: '○', l: 'Research Methods' },
+    { k: 'blogs',    i: '▢', l: 'Newsletters & Blogs' },
+    { k: 'frontier', i: '⧩', l: 'Frontier & Breadth' }
+  ];
+
+  const catalog = [];
+
+  // ─── Collect resources from PHASES and map to categories ───
+  function catOf(p, t, resKey) {
+    const pk = p.key;
+    if (resKey === 'papers') return 'papers';
+    if (resKey === 'repos') return 'repos';
+    const topicTitle = (t && t.title) || '';
+    if (pk === 'python') return 'prog';
+    if (pk === 'math') return 'math';
+    if (pk === 'classical') return 'cml';
+    if (pk === 'fp') return 'dlcore';
+    if (pk === 'dl') {
+      if (topicTitle.includes('CNN') || topicTitle.includes('Convolution')) return 'cv';
+      if (topicTitle.includes('Sequence')) return 'nlp';
+      return 'dlcore';
+    }
+    if (pk === 'spec') {
+      if (topicTitle.includes('Vision') || topicTitle.includes('CV')) return 'cv';
+      if (topicTitle.includes('NLP') || topicTitle.includes('Language')) return 'nlp';
+      if (topicTitle.includes('Reinforcement')) return 'rl';
+      return 'dlcore';
+    }
+    if (pk === 'llms') return 'nlp';
+    if (pk === 'mlops') return 'mlops';
+    return 'frontier';
+  }
+
+  PHASES.forEach((p) => {
+    (p.topics || []).forEach((t) => {
+      if (t.course) catalog.push({ cat: catOf(p, t, 'course'), p, t, data: t.course, badge: '<span class="badge-free">◇ Course</span>' });
+      (t.youtube || []).forEach((y) => catalog.push({ cat: catOf(p, t, 'youtube'), p, t, data: y, badge: '<span class="badge-paid" style="background:rgba(255,0,0,0.15);color:#ff6b6b;">▶ YouTube</span>' }));
+      (t.books || []).forEach((b) => catalog.push({ cat: catOf(p, t, 'books'), p, t, data: b, badge: b.free ? '<span class="badge-free">⊡ Free PDF</span>' : '<span class="badge-paid">⊡ Book</span>' }));
+      (t.papers || []).forEach((pp) => catalog.push({ cat: 'papers', p, t, data: pp, badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>' }));
+      (t.repos || []).forEach((r) => catalog.push({ cat: 'repos', p, t, data: r, badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">⊞ Repo</span>' }));
+      (t.websites || []).forEach((w) => catalog.push({ cat: catOf(p, t, 'websites'), p, t, data: w, badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◎ Link</span>' }));
+    });
+  });
+
+  // ─── Map Updates data into catalog ───
+  UPDATES.forEach((sec) => {
+    const isBlog = sec.cat.includes('Newsletters') || sec.cat.includes('Blogs');
+    const isResearch = sec.cat.includes('Paper Discovery');
+    sec.items.forEach((item) => {
+      const c = isBlog ? 'blogs' : isResearch ? 'research' : 'frontier';
+      catalog.push({ cat: c, p: null, t: null, data: item, badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◎ Link</span>' });
+    });
+  });
+
+  // ─── Extra curated resources for gaps ───
+  const extras = [
+    // Generative AI
+    { cat: 'genai', title: 'HuggingFace Diffusion Models Course', auth: 'Hugging Face', desc: 'Free course on diffusion models — theory, fine-tuning, Stable Diffusion, and building from scratch with the Diffusers library.', badge: '<span class="badge-free">◇ Course</span>', url: 'https://huggingface.co/learn/diffusion-course/' },
+    { cat: 'genai', title: 'MIT Flow Matching & Diffusion Models', auth: 'MIT CSAIL', desc: '2026 course on diffusion and flow models. Build a latent diffusion model from scratch. Covers SDEs, score matching, classifier-free guidance, DiT.', badge: '<span class="badge-free">◇ Course</span>', url: 'https://diffusion.csail.mit.edu/2026/' },
+    { cat: 'genai', title: 'What are Diffusion Models? — Lilian Weng', auth: 'Lilian Weng / OpenAI', desc: 'Comprehensive blog post covering DDPM, DDIM, score matching, SDEs, and guidance — the canonical reference for diffusion model theory.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◎ Link</span>', url: 'https://lilianweng.github.io/posts/2021-07-11-diffusion-models/' },
+    { cat: 'genai', title: 'DDPM — Denoising Diffusion Probabilistic Models', auth: 'Ho et al.', desc: 'The original DDPM paper. Introduced the diffusion process as a Markov chain and showed how to generate high-quality images by iteratively denoising Gaussian noise.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/2006.11239' },
+    { cat: 'genai', title: 'High-Resolution Image Synthesis with Latent Diffusion Models', auth: 'Rombach et al. (Stability AI)', desc: 'The Stable Diffusion paper. Introduced latent diffusion — applying the diffusion process in a compressed latent space. The foundation of modern text-to-image.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/2112.10752' },
+    { cat: 'genai', title: 'Diffusion 101 — Build from Scratch', auth: 'Cyr-Ch / GitHub', desc: 'Beginner-friendly guide to building and training diffusion models from scratch. Includes notebooks for DDIM, Heun, and DPM-Solver samplers with PyTorch.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">⊞ Repo</span>', url: 'https://github.com/Cyr-Ch/Diffusion-101' },
+    { cat: 'genai', title: 'Scalable Diffusion Models with Transformers (DiT)', auth: 'Peebles & Xie', desc: 'Replaces the U-Net backbone with a Vision Transformer for diffusion. Used in Stable Diffusion 3, Flux, Sora. The future of generative architecture.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/2212.09748' },
+    { cat: 'genai', title: 'The Annotated Diffusion Model', auth: 'Hugging Face', desc: 'In-depth walk-through of DDPM code and theory with maths and code side-by-side. Links to all key papers for further reading.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◎ Link</span>', url: 'https://huggingface.co/blog/annotated-diffusion' },
+
+    // Frontier & Breadth
+    { cat: 'frontier', title: 'Stanford HAI 2026 AI Index Report', auth: 'Stanford HAI', desc: 'The most comprehensive data-driven view of AI progress. Tracks technical progress, economic impact, policy, and societal implications annually.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◎ Link</span>', url: 'https://hai.stanford.edu/ai-index/2026-ai-index-report' },
+    { cat: 'frontier', title: 'fast.ai — Practical Deep Learning for Coders', auth: 'Jeremy Howard', desc: 'Free, top-down course: practice first, theory second. Build production-grade models from lesson 1. Philosophy of teaching by doing.', badge: '<span class="badge-free">◇ Course</span>', url: 'https://course.fast.ai/' },
+    { cat: 'frontier', title: 'MIT 6.S191 — Introduction to Deep Learning', auth: 'MIT', desc: 'MIT\'s free deep learning course updated annually. Covers foundations through latest research. Rigorous but accessible.', badge: '<span class="badge-free">◇ Course</span>', url: 'https://introtodeeplearning.com/' },
+    { cat: 'frontier', title: 'DeepLearning.AI Short Courses', auth: 'DeepLearning.AI', desc: '1–2 hour hands-on courses on RAG, agents, fine-tuning, multimodal, safety. Free and built for practitioners.', badge: '<span class="badge-free">◇ Course</span>', url: 'https://learn.deeplearning.ai/' },
+    { cat: 'frontier', title: 'arXiv cs.LG / cs.AI / cs.CL', auth: 'arXiv', desc: 'The primary source for all AI research — new papers daily. Bookmark these three categories and check them weekly.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◎ Link</span>', url: 'https://arxiv.org/' },
+    { cat: 'frontier', title: 'Scaling Laws for Neural Language Models', auth: 'Kaplan et al. (OpenAI)', desc: 'Established the power-law scaling relationship between model size, data, and performance. The paper that shaped the LLM era.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/2001.08361' },
+    { cat: 'frontier', title: 'Chinchilla — Training Compute-Optimal LLMs', auth: 'Hoffmann et al. (DeepMind)', desc: 'Showed most models are undertrained — for optimal performance, model size and training data should scale equally. Changed how everyone trains LLMs.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/2203.15556' },
+
+    // CV extra
+    { cat: 'cv', title: 'Vision Transformer (ViT) Paper', auth: 'Dosovitskiy et al. (Google)', desc: 'Applied Transformer architecture directly to image patches. Proved CNNs are not necessary for vision. The foundation of modern CV.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/2010.11929' },
+    { cat: 'cv', title: 'Segment Anything (SAM)', auth: 'Meta AI', desc: 'A foundation model for image segmentation. Zero-shot segmentation of any object. One of the most impactful CV projects of recent years.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/2304.02643' },
+
+    // RL extra
+    { cat: 'rl', title: 'Playing Atari with Deep RL (DQN)', auth: 'Mnih et al. (DeepMind)', desc: 'The paper that started deep reinforcement learning. First algorithm to learn to play Atari games directly from pixels using a DQN.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/1312.5602' },
+    { cat: 'rl', title: 'Proximal Policy Optimization (PPO)', auth: 'Schulman et al. (OpenAI)', desc: 'The default RL algorithm used in RLHF and many production systems. Simple, stable, and sample-efficient.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/1707.06347' },
+
+    // NLP extra
+    { cat: 'nlp', title: 'BERT — Pre-training of Deep Bidirectional Transformers', auth: 'Devlin et al. (Google)', desc: 'Introduced masked language modeling and next-sentence prediction. The foundational paper for bidirectional encoder models.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/1810.04805' },
+    { cat: 'nlp', title: 'Constitutional AI', auth: 'Bai et al. (Anthropic)', desc: 'A method for training harmless AI assistants using self-supervision instead of human feedback alone. Key alignment technique.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◆ Paper</span>', url: 'https://arxiv.org/abs/2212.08073' },
+
+    // MLOps extra
+    { cat: 'mlops', title: 'Weights & Biases Documentation', auth: 'Weights & Biases', desc: 'Industry-standard experiment tracking, dataset versioning, and model registry. The most widely used MLOps platform in production.', badge: '<span class="badge-paid" style="background:rgba(255,255,255,0.05);color:#ccc;">◎ Link</span>', url: 'https://docs.wandb.ai/' },
+    { cat: 'mlops', title: 'Designing Machine Learning Systems', auth: 'Chip Huyen', desc: 'The definitive book on ML system design. Covers data engineering, feature stores, monitoring, and production architecture patterns.', badge: '<span class="badge-paid">⊡ Book</span>', url: 'https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/' },
+  ];
+
+  extras.forEach((e) => catalog.push({
+    cat: e.cat, p: null, t: null,
+    data: { name: e.title, provider: e.auth, desc: e.desc, url: e.url, _badge: e.badge },
+    badge: e.badge
+  }));
+
+  // ─── Render ───
   let h = `<div class="phase-header">
     <div class="header-top">
       <div class="phase-title-wrapper">
@@ -280,79 +391,51 @@ function renderAllResources() {
       </div>
       <div class="dots-menu">•••</div>
     </div>
-    <div class="phase-purpose">Every resource across all 8 phases — organized by type and listed in the sequence you should follow. Click any card to see details.</div>
+    <div class="phase-purpose">Every resource across all 8 phases — organized by topic area with the sequence to follow. Click any card to see details.</div>
   </div>
 
-  <div class="filter-bar">
+  <div class="filter-bar" style="flex-wrap:wrap;gap:4px;">
     <button class="filter-btn ${resourceFilter === 'all' ? 'active' : ''}" onclick="setResourceFilter('all')">All</button>
-    <button class="filter-btn ${resourceFilter === 'course' ? 'active' : ''}" onclick="setResourceFilter('course')">◇ Courses</button>
-    <button class="filter-btn ${resourceFilter === 'youtube' ? 'active' : ''}" onclick="setResourceFilter('youtube')">▶ YouTube</button>
-    <button class="filter-btn ${resourceFilter === 'books' ? 'active' : ''}" onclick="setResourceFilter('books')">⊡ Books</button>
-    <button class="filter-btn ${resourceFilter === 'papers' ? 'active' : ''}" onclick="setResourceFilter('papers')">◆ Papers</button>
-    <button class="filter-btn ${resourceFilter === 'repos' ? 'active' : ''}" onclick="setResourceFilter('repos')">⊞ Repos</button>
-    <button class="filter-btn ${resourceFilter === 'websites' ? 'active' : ''}" onclick="setResourceFilter('websites')">◎ Websites</button>
+    ${CATS.map(c => `<button class="filter-btn ${resourceFilter === c.k ? 'active' : ''}" onclick="setResourceFilter('${c.k}')">${c.i} ${c.l}</button>`).join('')}
   </div>`;
 
-  // Collect resources by type across all phases
-  const byType = { course: [], youtube: [], books: [], papers: [], repos: [], websites: [] };
+  const activeCats = resourceFilter === 'all' ? CATS : CATS.filter(c => c.k === resourceFilter);
 
-  PHASES.forEach((p, pi) => {
-    (p.topics || []).forEach((t, ti) => {
-      if (t.course) byType.course.push({ p, pi, ti, data: t.course, key: 'course' });
-      (t.youtube || []).forEach((y, i) => byType.youtube.push({ p, pi, ti, data: y, key: 'youtube', idx: i }));
-      (t.books || []).forEach((b, i) => byType.books.push({ p, pi, ti, data: b, key: 'books', idx: i }));
-      (t.papers || []).forEach((pp, i) => byType.papers.push({ p, pi, ti, data: pp, key: 'papers', idx: i }));
-      (t.repos || []).forEach((r, i) => byType.repos.push({ p, pi, ti, data: r, key: 'repos', idx: i }));
-      (t.websites || []).forEach((w, i) => byType.websites.push({ p, pi, ti, data: w, key: 'websites', idx: i }));
-    });
-  });
-
-  const sections = [
-    { key: 'course', icon: '◇', label: 'Courses', badge: '<span class="badge-free">◇ Course</span>' },
-    { key: 'youtube', icon: '▶', label: 'YouTube Playlists & Videos', badge: '<span class="badge-paid" style="background: rgba(255,0,0,0.15); color: #ff6b6b;">▶ YouTube</span>' },
-    { key: 'books', icon: '⊡', label: 'Free Books & Textbooks', badge: null },
-    { key: 'papers', icon: '◆', label: 'Research Papers', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">◆ Paper</span>' },
-    { key: 'repos', icon: '⊞', label: 'GitHub Repositories', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">⊞ Repo</span>' },
-    { key: 'websites', icon: '◎', label: 'Websites & Tools', badge: '<span class="badge-paid" style="background: rgba(255,255,255,0.05); color: #ccc;">◎ Link</span>' }
-  ];
-
-  sections.forEach(section => {
-    const items = byType[section.key];
+  activeCats.forEach((cat) => {
+    const items = catalog.filter(x => x.cat === cat.k);
     if (!items.length) return;
-    if (resourceFilter !== 'all' && resourceFilter !== section.key) return;
 
-    const showLabel = resourceFilter === 'all' ? section.label + ' <span style="color:var(--text-muted);font-weight:400;font-size:13px;">(' + items.length + ')</span>' : section.label;
+    const combined = resourceFilter === 'all'
+      ? cat.l + ' <span style="color:var(--text-muted);font-weight:400;font-size:13px;">(' + items.length + ')</span>'
+      : cat.l;
 
-    h += `<div style="margin-top: 36px;">
-      <div class="section-title"><span class="icon">${section.icon}</span> <span>${showLabel}</span></div>
+    h += `<div style="margin-top: 32px;">
+      <div class="section-title"><span class="icon">${cat.i}</span> <span>${combined}</span></div>
       <div class="grid-1">`;
 
-    items.forEach((item, idx) => {
+    items.forEach((item) => {
       const d = item.data;
       const title = d.name || d.n || d.t || '';
       const author = d.provider || d.s || d.a || '';
       const desc = d.desc || d.d || '';
-      const phaseLabel = item.p.stage + ' — ' + item.p.label;
-      const topicLabel = item.p.topics[item.ti].title;
+      const phaseLabel = item.p ? (item.p.stage + ' \u2014 ' + item.p.label) : null;
+      const topicLabel = item.t ? item.t.title : null;
+      const url = d.url || '';
 
-      let badgeHtml = section.badge;
-      if (section.key === 'books') {
-        badgeHtml = d.free
-          ? '<span class="badge-free">⊡ Free PDF</span>'
-          : '<span class="badge-paid">⊡ Book</span>';
-      }
-
-      h += `<div class="card" style="margin-bottom:0;" onclick="openModal('${item.p.key}', ${item.ti}, '${section.key}', ${item.idx ?? 0})">
+      h += `<div class="card" style="margin-bottom:0;${url ? 'cursor:pointer;' : ''}" ${url ? `onclick="window.open('${url.replace(/'/g, "\\'")}','_blank')"` : ''}>
         <div class="flex-between" style="margin-bottom:6px;">
           <span class="card-title">${title}</span>
-          ${badgeHtml}
-        </div>
-        ${author ? `<div class="author-text" style="margin-bottom:4px;">${author}</div>` : ''}
-        <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">
-          <span style="background:rgba(255,255,255,0.04);padding:2px 8px;border-radius:4px;">${phaseLabel}</span>
-          <span style="background:rgba(255,255,255,0.04);padding:2px 8px;border-radius:4px;margin-left:4px;">${topicLabel}</span>
-        </div>
-        <p class="text-sm">${desc}</p>
+          ${item.badge}
+        </div>`;
+
+      if (author) h += `<div class="author-text" style="margin-bottom:4px;">${author}</div>`;
+      if (phaseLabel) {
+        h += `<div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">
+          <span style="background:rgba(255,255,255,0.04);padding:2px 8px;border-radius:4px;">${phaseLabel}</span>`;
+        if (topicLabel) h += `<span style="background:rgba(255,255,255,0.04);padding:2px 8px;border-radius:4px;margin-left:4px;">${topicLabel}</span>`;
+        h += `</div>`;
+      }
+      h += `<p class="text-sm">${desc}</p>
       </div>`;
     });
 

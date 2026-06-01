@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 ---
 
 <!DOCTYPE html>
@@ -116,5 +117,6 @@ import '../styles/global.css';
 
 <script src="/data.js" is:inline></script>
 <script src="/app.js" is:inline></script>
+<Analytics />
 </body>
 </html>

@@ -1,5 +1,6 @@
 ---
 import '../styles/home.css';
+import Analytics from '@vercel/analytics/astro';
 ---
 
 <!DOCTYPE html>
@@ -1548,6 +1549,8 @@ import '../styles/home.css';
   // Init lucide icons
   if (typeof lucide !== 'undefined') lucide.createIcons();
 </script>
+
+<Analytics />
 
 </body>
 </html>

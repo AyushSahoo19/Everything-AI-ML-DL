@@ -1,0 +1,109 @@
+---
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — AI/ML/DL Roadmap</title>
+  <meta name="description" content="Your personalized AI/ML/DL learning dashboard. Navigate through phases, topics, courses, books, and resources.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    .dashboard-topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: rgba(24, 24, 24, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #333;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 16px;
+      z-index: 100;
+    }
+    .topbar-brand {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e5e5e5;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .topbar-brand:hover { text-decoration: none; color: #fff; }
+    .topbar-sep { color: #444; font-size: 16px; }
+    .topbar-current { font-size: 13px; color: #a3a3a3; }
+    .topbar-back {
+      margin-left: auto;
+      font-size: 12px;
+      color: #7fbcf6;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border: 1px solid rgba(127,188,246,0.2);
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .topbar-back:hover {
+      background: rgba(127,188,246,0.08);
+      text-decoration: none;
+    }
+    .app-container {
+      padding-top: 48px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard-topbar">
+  <a href="/" class="topbar-brand">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    AI/ML Roadmap
+  </a>
+  <span class="topbar-sep">/</span>
+  <span class="topbar-current">Dashboard</span>
+  <a href="/" class="topbar-back">← Back to Home</a>
+</div>
+
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">ML/DL Roadmap</div>
+      <div class="sidebar-subtitle">12–18 month journey</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Learning Phases</div>
+      <div id="pnav"></div>
+    </div>
+    <div class="nav-section" style="padding-bottom: 24px;">
+      <div class="nav-section-title">Resources</div>
+      <div id="snav"></div>
+    </div>
+  </aside>
+  
+  <main class="main-content" id="main">
+    <!-- Dynamic content injected here -->
+  </main>
+</div>
+
+<!-- Modal Container -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content" id="modal-content">
+    <!-- Modal details injected here -->
+  </div>
+</div>
+
+<script src="/data.js" is:inline></script>
+<script src="/app.js" is:inline></script>
+</body>
+</html>

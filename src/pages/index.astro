@@ -1,0 +1,1544 @@
+---
+import '../styles/home.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI/ML/DL Roadmap — From Zero to Machine Intelligence</title>
+  <meta name="description" content="A curated, structured 12–18 month AI/ML/DL learning roadmap. 8 phases from Python to LLMs, 30+ topics, 100+ hand-picked resources with a step-by-step guidance system.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <div class="nav-brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+      </div>
+      ML Roadmap
+    </a>
+
+    <div class="nav-divider"></div>
+
+    <div class="nav-links">
+      <a href="#roadmap"   class="nav-link">Roadmap</a>
+      <a href="#syllabus"  class="nav-link">Syllabus</a>
+      <a href="#guidance"  class="nav-link">Guidance</a>
+      <a href="#resources" class="nav-link">Resources</a>
+    </div>
+
+    <a href="/dashboard" class="nav-cta">
+      Open Dashboard
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<header>
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">12–18 Month Complete Journey</span>
+      </div>
+
+      <h1 class="hero-title">
+        From Zero to<br>
+        <span class="hero-title-accent">Machine Intelligence</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        A curated, opinionated roadmap through Python, Math, Classical ML, Deep Learning,
+        First Principles, Specialisation, LLMs, and MLOps — every resource hand-picked,
+        every phase guided step-by-step.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Phases</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Topics</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">100+</div>
+          <div class="stat-label">Resources</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">Free</div>
+          <div class="stat-label">Always</div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="/dashboard" class="btn-primary-home">
+          Start Learning
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#roadmap" class="btn-secondary-home">
+          View Roadmap
+        </a>
+      </div>
+
+      <div class="hero-tags">
+        <span class="hero-tag">Python</span>
+        <span class="hero-tag">NumPy · Pandas</span>
+        <span class="hero-tag">Linear Algebra</span>
+        <span class="hero-tag">PyTorch</span>
+        <span class="hero-tag">Transformers</span>
+        <span class="hero-tag">LLMs</span>
+        <span class="hero-tag">LoRA · RLHF</span>
+        <span class="hero-tag">MLOps</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-right-header">
+        <div class="hero-right-label">What You'll Cover</div>
+        <div class="hero-right-desc">A structured path across 8 phases — from Python foundations to production ML systems</div>
+      </div>
+      <div class="hero-phase-grid">
+        <a href="/dashboard" class="hpc">
+          <span class="hpc-num">0</span>
+          <div class="hpc-body">
+            <span class="hpc-stage">Phase 0</span>
+            <span class="hpc-name">Python Foundation</span>
+          </div>
+        </a>
+        <a href="/dashboard" class="hpc">
+          <span class="hpc-num">1</span>
+          <div class="hpc-body">
+            <span class="hpc-stage">Phase 1</span>
+            <span class="hpc-name">Math for ML</span>
+          </div>
+        </a>
+        <a href="/dashboard" class="hpc">
+          <span class="hpc-num">2</span>
+          <div class="hpc-body">
+            <span class="hpc-stage">Stages 1–2</span>
+            <span class="hpc-name">Classical ML</span>
+          </div>
+        </a>
+        <a href="/dashboard" class="hpc">
+          <span class="hpc-num">3</span>
+          <div class="hpc-body">
+            <span class="hpc-stage">Stage 3</span>
+            <span class="hpc-name">Deep Learning</span>
+          </div>
+        </a>
+        <a href="/dashboard" class="hpc">
+          <span class="hpc-num">4</span>
+          <div class="hpc-body">
+            <span class="hpc-stage">Stage 4</span>
+            <span class="hpc-name">First Principles</span>
+          </div>
+        </a>
+        <a href="/dashboard" class="hpc">
+          <span class="hpc-num">5</span>
+          <div class="hpc-body">
+            <span class="hpc-stage">Stage 5</span>
+            <span class="hpc-name">Specialisation</span>
+          </div>
+        </a>
+        <a href="/dashboard" class="hpc">
+          <span class="hpc-num">6</span>
+          <div class="hpc-body">
+            <span class="hpc-stage">Stage 6</span>
+            <span class="hpc-name">Large Language Models</span>
+          </div>
+        </a>
+        <a href="/dashboard" class="hpc">
+          <span class="hpc-num">7</span>
+          <div class="hpc-body">
+            <span class="hpc-stage">Stage 7</span>
+            <span class="hpc-name">MLOps</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════
+     CURRICULUM DASHBOARD PREVIEW
+═══════════════════════════════════════════ -->
+<section class="section" id="preview">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Dashboard Preview</div>
+      <h2 class="section-title">What You'll Learn</h2>
+      <p class="section-subtitle">Every tool, framework, concept, and resource across all 8 phases — browse by tech stack or by syllabus.</p>
+    </div>
+
+    <div class="preview-panel">
+      <div class="preview-tabs">
+        <button class="pv-tab active" data-view="stack">Tech Stack</button>
+        <button class="pv-tab" data-view="syllabus">Full Syllabus</button>
+      </div>
+
+      <div id="previewStack">
+        <div class="preview-filter-bar">
+          <button class="pf-btn active" data-pf="all">All Topics</button>
+          <button class="pf-btn" data-pf="lang">Languages</button>
+          <button class="pf-btn" data-pf="math">Mathematics</button>
+          <button class="pf-btn" data-pf="ml">Classical ML</button>
+          <button class="pf-btn" data-pf="dl">Deep Learning</button>
+          <button class="pf-btn" data-pf="llm">LLMs</button>
+          <button class="pf-btn" data-pf="mlops">MLOps</button>
+        </div>
+        <div class="preview-grid" id="previewGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div id="previewSyllabus" style="display:none;">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <a href="/dashboard" class="preview-cta">
+      Open Full Dashboard
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     RESOURCES PHASE-WISE
+═══════════════════════════════════════════ -->
+<section class="section" id="resources">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Resources</div>
+      <h2 class="section-title">Everything You Need, Phase by Phase</h2>
+      <p class="section-subtitle">Curated courses, papers, books, repos, and tutorials — hand-picked for each stage of the journey.</p>
+    </div>
+
+    <div class="res-panel">
+      <div class="res-sidebar" id="resSidebar">
+        <!-- Populated by JS -->
+      </div>
+      <div class="res-content" id="resContent">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:36px;">
+      <a href="/dashboard" class="res-cta">Browse All Resources →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     ROADMAP TIMELINE
+═══════════════════════════════════════════ -->
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">The Journey</div>
+      <h2 class="section-title">8 Phases, 12–18 Months</h2>
+      <p class="section-subtitle">Each phase directly unlocks the next. Linear, deliberate, no skipping.</p>
+    </div>
+
+    <div class="roadmap-list">
+
+      <div class="phase-row">
+        <div class="phase-spine">
+          <div class="spine-dot"></div>
+          <div class="spine-line"></div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-top">
+            <div class="phase-tag-row">
+              <span class="phase-stage-label">Phase 0</span>
+              <span class="phase-dur-label">4–6 weeks</span>
+            </div>
+            <a href="/dashboard" class="phase-open-link">Open →</a>
+          </div>
+          <div class="phase-card-title">Python Foundation</div>
+          <p class="phase-card-desc">Python is the universal language of ML. Master it before everything else. OOP, NumPy, Pandas, and Matplotlib are the toolkit you'll use daily for the next decade.</p>
+          <div class="phase-pills">
+            <span class="phase-pill">CS50P</span>
+            <span class="phase-pill">NumPy Crash Course</span>
+            <span class="phase-pill">Kaggle Pandas</span>
+            <span class="phase-pill">Matplotlib</span>
+            <span class="phase-pill">PDSH (VanderPlas)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-spine">
+          <div class="spine-dot"></div>
+          <div class="spine-line"></div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-top">
+            <div class="phase-tag-row">
+              <span class="phase-stage-label">Phase 1</span>
+              <span class="phase-dur-label">6–8 weeks</span>
+            </div>
+            <a href="/dashboard" class="phase-open-link">Open →</a>
+          </div>
+          <div class="phase-card-title">Math for ML</div>
+          <p class="phase-card-desc">ML is applied mathematics. Linear algebra defines data representation. Calculus explains how learning happens. Probability models uncertainty.</p>
+          <div class="phase-pills">
+            <span class="phase-pill">3Blue1Brown</span>
+            <span class="phase-pill">Imperial College Coursera</span>
+            <span class="phase-pill">StatQuest</span>
+            <span class="phase-pill">Seeing Theory</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-spine">
+          <div class="spine-dot"></div>
+          <div class="spine-line"></div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-top">
+            <div class="phase-tag-row">
+              <span class="phase-stage-label">Stages 1–2</span>
+              <span class="phase-dur-label">10–12 weeks</span>
+            </div>
+            <a href="/dashboard" class="phase-open-link">Open →</a>
+          </div>
+          <div class="phase-card-title">Classical ML</div>
+          <p class="phase-card-desc">Classical ML teaches what deep learning hides — bias-variance tradeoff, regularisation, cross-validation, feature engineering. Non-negotiable fundamentals.</p>
+          <div class="phase-pills">
+            <span class="phase-pill">Andrew Ng Specialization</span>
+            <span class="phase-pill">ISLP Textbook</span>
+            <span class="phase-pill">XGBoost Paper</span>
+            <span class="phase-pill">Hands-On ML</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-spine">
+          <div class="spine-dot"></div>
+          <div class="spine-line"></div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-top">
+            <div class="phase-tag-row">
+              <span class="phase-stage-label">Stage 3</span>
+              <span class="phase-dur-label">12–16 weeks</span>
+            </div>
+            <a href="/dashboard" class="phase-open-link">Open →</a>
+          </div>
+          <div class="phase-card-title">Deep Learning</div>
+          <p class="phase-card-desc">Systematic mastery of neural networks — forward and backward passes, CNNs, RNNs, LSTMs, regularisation tricks, and real PyTorch engineering.</p>
+          <div class="phase-pills">
+            <span class="phase-pill">DL Specialization (Ng)</span>
+            <span class="phase-pill">ResNet Paper</span>
+            <span class="phase-pill">Adam · Dropout</span>
+            <span class="phase-pill">Stanford CS224n</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-spine">
+          <div class="spine-dot"></div>
+          <div class="spine-line"></div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-top">
+            <div class="phase-tag-row">
+              <span class="phase-stage-label">Stage 4</span>
+              <span class="phase-dur-label">6–8 weeks</span>
+            </div>
+            <a href="/dashboard" class="phase-open-link">Open →</a>
+          </div>
+          <div class="phase-card-title">First Principles</div>
+          <p class="phase-card-desc">Build every component of a neural network from scratch. After this stage no black box remains. Karpathy's Zero-to-Hero series is the core curriculum.</p>
+          <div class="phase-pills">
+            <span class="phase-pill">micrograd</span>
+            <span class="phase-pill">makemore</span>
+            <span class="phase-pill">Let's build GPT</span>
+            <span class="phase-pill">Attention Is All You Need</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-spine">
+          <div class="spine-dot"></div>
+          <div class="spine-line"></div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-top">
+            <div class="phase-tag-row">
+              <span class="phase-stage-label">Stage 5</span>
+              <span class="phase-dur-label">12–16 weeks</span>
+            </div>
+            <a href="/dashboard" class="phase-open-link">Open →</a>
+          </div>
+          <div class="phase-card-title">Specialisation</div>
+          <p class="phase-card-desc">Go deep in one domain. Choose ONE track: Computer Vision (CS231n), NLP (CS224n + HuggingFace), or Reinforcement Learning (David Silver). Depth is what makes you employable.</p>
+          <div class="phase-pills">
+            <span class="phase-pill">Stanford CS231n</span>
+            <span class="phase-pill">Stanford CS224n</span>
+            <span class="phase-pill">David Silver RL</span>
+            <span class="phase-pill">HuggingFace</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-spine">
+          <div class="spine-dot"></div>
+          <div class="spine-line"></div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-top">
+            <div class="phase-tag-row">
+              <span class="phase-stage-label">Stage 6</span>
+              <span class="phase-dur-label">10–14 weeks</span>
+            </div>
+            <a href="/dashboard" class="phase-open-link">Open →</a>
+          </div>
+          <div class="phase-card-title">Large Language Models</div>
+          <p class="phase-card-desc">Turn from a user of LLMs into someone who builds, fine-tunes, and deploys them. Pre-training, LoRA, RLHF, alignment — and reading production model source code.</p>
+          <div class="phase-pills">
+            <span class="phase-pill">Stanford CS336</span>
+            <span class="phase-pill">GPT-3 Paper</span>
+            <span class="phase-pill">LoRA · InstructGPT</span>
+            <span class="phase-pill">LLaMA 3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-row phase-row--last">
+        <div class="phase-spine">
+          <div class="spine-dot"></div>
+          <div class="spine-line"></div>
+        </div>
+        <div class="phase-card">
+          <div class="phase-card-top">
+            <div class="phase-tag-row">
+              <span class="phase-stage-label">Stage 7</span>
+              <span class="phase-dur-label">8–10 weeks</span>
+            </div>
+            <a href="/dashboard" class="phase-open-link">Open →</a>
+          </div>
+          <div class="phase-card-title">MLOps</div>
+          <p class="phase-card-desc">Reliable, scalable ML systems — data pipelines, deployment, monitoring, versioning. Turn your models into real, production-grade systems that stay alive in the real world.</p>
+          <div class="phase-pills">
+            <span class="phase-pill">Made With ML</span>
+            <span class="phase-pill">FastAPI · Docker</span>
+            <span class="phase-pill">MLflow</span>
+            <span class="phase-pill">Chip Huyen</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FULL SYLLABUS INDEX
+═══════════════════════════════════════════ -->
+<section class="section" id="syllabus">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Full Syllabus</div>
+      <h2 class="section-title">Complete Content Index</h2>
+      <p class="section-subtitle">Every topic, subtopic, and resource — indexed with phase numbers and resource types.</p>
+    </div>
+
+    <div class="syllabus-list">
+
+      <!-- Phase 0 -->
+      <div class="syllabus-phase-block">
+        <div class="syllabus-phase-header">
+          <span class="syl-tag syl-tag-0">Phase 0</span>
+          <span class="syllabus-phase-title">Python Foundation</span>
+          <span class="syllabus-phase-dur">4–6 weeks</span>
+          <a href="/dashboard" class="syllabus-phase-link">Open →</a>
+        </div>
+        <div class="syllabus-topics">
+          <div class="syl-topic-row">
+            <span class="syl-index">0.1</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Python Basics & OOP</div>
+              <div class="syl-resources">
+                <span class="res res-course">CS50P (Harvard)</span>
+                <span class="res res-yt">Corey Schafer OOP</span>
+                <span class="res res-book">Automate the Boring Stuff</span>
+                <span class="res res-web">W3Schools Python</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">0.2</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Numerical Data with NumPy</div>
+              <div class="syl-resources">
+                <span class="res res-yt">NumPy Crash Course (FCC)</span>
+                <span class="res res-book">PDSH Ch.2 — VanderPlas</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">0.3</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Data Wrangling with Pandas</div>
+              <div class="syl-resources">
+                <span class="res res-course">Kaggle Pandas Course</span>
+                <span class="res res-yt">Keith Galli Tutorial</span>
+                <span class="res res-book">PDSH Ch.3</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">0.4</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Data Visualization</div>
+              <div class="syl-resources">
+                <span class="res res-yt">Corey Schafer Matplotlib</span>
+                <span class="res res-web">Seaborn Gallery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 1 -->
+      <div class="syllabus-phase-block">
+        <div class="syllabus-phase-header">
+          <span class="syl-tag syl-tag-1">Phase 1</span>
+          <span class="syllabus-phase-title">Math for ML</span>
+          <span class="syllabus-phase-dur">6–8 weeks</span>
+          <a href="/dashboard" class="syllabus-phase-link">Open →</a>
+        </div>
+        <div class="syllabus-topics">
+          <div class="syl-topic-row">
+            <span class="syl-index">1.1</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Linear Algebra</div>
+              <div class="syl-resources">
+                <span class="res res-course">Imperial College / Coursera</span>
+                <span class="res res-yt">Essence of Linear Algebra (3B1B)</span>
+                <span class="res res-book">Linear Algebra Done Right</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">1.2</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Multivariate Calculus</div>
+              <div class="syl-resources">
+                <span class="res res-course">Imperial College Calculus</span>
+                <span class="res res-yt">Essence of Calculus (3B1B)</span>
+                <span class="res res-paper">Matrix Calculus for DL (Parr & Howard)</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">1.3</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Probability & Statistics</div>
+              <div class="syl-resources">
+                <span class="res res-yt">StatQuest (Josh Starmer)</span>
+                <span class="res res-book">Probabilistic ML Vol.1 (Murphy)</span>
+                <span class="res res-web">Seeing Theory (Brown Univ.)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stages 1–2 -->
+      <div class="syllabus-phase-block">
+        <div class="syllabus-phase-header">
+          <span class="syl-tag syl-tag-2">Stages 1–2</span>
+          <span class="syllabus-phase-title">Classical ML</span>
+          <span class="syllabus-phase-dur">10–12 weeks</span>
+          <a href="/dashboard" class="syllabus-phase-link">Open →</a>
+        </div>
+        <div class="syllabus-topics">
+          <div class="syl-topic-row">
+            <span class="syl-index">2.1</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Supervised Learning</div>
+              <div class="syl-resources">
+                <span class="res res-course">Andrew Ng ML Specialization</span>
+                <span class="res res-book">ISLP (James, Witten, Hastie, Tibshirani)</span>
+                <span class="res res-yt">StatQuest: Linear Models</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">2.2</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Unsupervised Learning</div>
+              <div class="syl-resources">
+                <span class="res res-course">Andrew Ng (Course 3)</span>
+                <span class="res res-repo">ML-From-Scratch (GitHub)</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">2.3</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Ensembles & Boosting</div>
+              <div class="syl-resources">
+                <span class="res res-paper">XGBoost Paper (Chen & Guestrin)</span>
+                <span class="res res-paper">Random Forests (Breiman)</span>
+                <span class="res res-yt">StatQuest: Random Forests</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">2.4</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Practical Implementation</div>
+              <div class="syl-resources">
+                <span class="res res-book">Hands-On ML 3rd Ed. (Géron)</span>
+                <span class="res res-web">Scikit-Learn User Guide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="syllabus-phase-block">
+        <div class="syllabus-phase-header">
+          <span class="syl-tag syl-tag-3">Stage 3</span>
+          <span class="syllabus-phase-title">Deep Learning</span>
+          <span class="syllabus-phase-dur">12–16 weeks</span>
+          <a href="/dashboard" class="syllabus-phase-link">Open →</a>
+        </div>
+        <div class="syllabus-topics">
+          <div class="syl-topic-row">
+            <span class="syl-index">3.1</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Neural Networks & Backpropagation</div>
+              <div class="syl-resources">
+                <span class="res res-course">Deep Learning Specialization (Ng)</span>
+                <span class="res res-book">Nielsen: Neural Networks & DL</span>
+                <span class="res res-web">TensorFlow Playground</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">3.2</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Regularization & Optimization</div>
+              <div class="syl-resources">
+                <span class="res res-course">Improving Deep NNs (DeepLearning.AI)</span>
+                <span class="res res-paper">Dropout Paper (Srivastava et al.)</span>
+                <span class="res res-paper">Adam Paper (Kingma & Ba)</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">3.3</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Convolutional Neural Networks</div>
+              <div class="syl-resources">
+                <span class="res res-course">CNN Course (DeepLearning.AI)</span>
+                <span class="res res-paper">Deep Residual Learning — ResNet (He et al.)</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">3.4</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Sequence Models</div>
+              <div class="syl-resources">
+                <span class="res res-course">Sequence Models (DeepLearning.AI)</span>
+                <span class="res res-yt">Stanford CS224n Lectures</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 4 -->
+      <div class="syllabus-phase-block">
+        <div class="syllabus-phase-header">
+          <span class="syl-tag syl-tag-4">Stage 4</span>
+          <span class="syllabus-phase-title">First Principles</span>
+          <span class="syllabus-phase-dur">6–8 weeks</span>
+          <a href="/dashboard" class="syllabus-phase-link">Open →</a>
+        </div>
+        <div class="syllabus-topics">
+          <div class="syl-topic-row">
+            <span class="syl-index">4.1</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Autograd from Scratch</div>
+              <div class="syl-resources">
+                <span class="res res-course">Neural Networks: Zero to Hero (Karpathy)</span>
+                <span class="res res-repo">micrograd (GitHub)</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">4.2</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Language Modeling from Scratch</div>
+              <div class="syl-resources">
+                <span class="res res-yt">Building makemore (Karpathy)</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">4.3</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Building a Transformer</div>
+              <div class="syl-resources">
+                <span class="res res-yt">Let's build GPT (Karpathy)</span>
+                <span class="res res-paper">Attention Is All You Need (Vaswani et al.)</span>
+                <span class="res res-book">The Annotated Transformer (Harvard NLP)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 5 -->
+      <div class="syllabus-phase-block">
+        <div class="syllabus-phase-header">
+          <span class="syl-tag syl-tag-5">Stage 5</span>
+          <span class="syllabus-phase-title">Specialisation</span>
+          <span class="syllabus-phase-dur">12–16 weeks</span>
+          <a href="/dashboard" class="syllabus-phase-link">Open →</a>
+        </div>
+        <div class="syllabus-topics">
+          <div class="syl-topic-row">
+            <span class="syl-index">5.1</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Computer Vision Track</div>
+              <div class="syl-resources">
+                <span class="res res-course">Stanford CS231n</span>
+                <span class="res res-yt">CS231n Lectures</span>
+                <span class="res res-repo">CS231n Assignments (GitHub)</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">5.2</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">NLP Track</div>
+              <div class="syl-resources">
+                <span class="res res-course">Stanford CS224n</span>
+                <span class="res res-web">HuggingFace NLP Course</span>
+                <span class="res res-book">Speech and Language Processing (Jurafsky & Martin)</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">5.3</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Reinforcement Learning Track</div>
+              <div class="syl-resources">
+                <span class="res res-course">David Silver RL Course (DeepMind)</span>
+                <span class="res res-web">HuggingFace Deep RL</span>
+                <span class="res res-book">Reinforcement Learning (Sutton & Barto)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 6 -->
+      <div class="syllabus-phase-block">
+        <div class="syllabus-phase-header">
+          <span class="syl-tag syl-tag-6">Stage 6</span>
+          <span class="syllabus-phase-title">Large Language Models</span>
+          <span class="syllabus-phase-dur">10–14 weeks</span>
+          <a href="/dashboard" class="syllabus-phase-link">Open →</a>
+        </div>
+        <div class="syllabus-topics">
+          <div class="syl-topic-row">
+            <span class="syl-index">6.1</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Advanced Transformer Architectures</div>
+              <div class="syl-resources">
+                <span class="res res-course">Stanford CS336</span>
+                <span class="res res-book">Build an LLM (Sebastian Raschka)</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">6.2</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Pre-training & Scaling Laws</div>
+              <div class="syl-resources">
+                <span class="res res-paper">GPT-3 — Language Models are Few-Shot Learners</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">6.3</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Fine-tuning & Alignment</div>
+              <div class="syl-resources">
+                <span class="res res-course">HuggingFace LLM Course</span>
+                <span class="res res-paper">InstructGPT (Ouyang et al.)</span>
+                <span class="res res-paper">LoRA: Low-Rank Adaptation (Hu et al.)</span>
+                <span class="res res-repo">meta-llama/llama3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stage 7 -->
+      <div class="syllabus-phase-block">
+        <div class="syllabus-phase-header">
+          <span class="syl-tag syl-tag-7">Stage 7</span>
+          <span class="syllabus-phase-title">MLOps</span>
+          <span class="syllabus-phase-dur">8–10 weeks</span>
+          <a href="/dashboard" class="syllabus-phase-link">Open →</a>
+        </div>
+        <div class="syllabus-topics">
+          <div class="syl-topic-row">
+            <span class="syl-index">7.1</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Model Deployment & Serving</div>
+              <div class="syl-resources">
+                <span class="res res-course">Made With ML (Goku Mohandas)</span>
+                <span class="res res-repo">GokuMohandas/Made-With-ML</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">7.2</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Experiment Tracking</div>
+              <div class="syl-resources">
+                <span class="res res-course">Full Stack Deep Learning (UC Berkeley)</span>
+                <span class="res res-repo">mlflow/mlflow</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">7.3</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Monitoring & System Design</div>
+              <div class="syl-resources">
+                <span class="res res-book">ML Engineering (Andriy Burkov)</span>
+                <span class="res res-web">Chip Huyen's Blog</span>
+                <span class="res res-paper">ML: The High-Interest Credit Card of Technical Debt</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- System -->
+      <div class="syllabus-phase-block">
+        <div class="syllabus-phase-header">
+          <span class="syl-tag syl-tag-sys">System</span>
+          <span class="syllabus-phase-title">Stay Updated + Guidance</span>
+          <span class="syllabus-phase-dur">Ongoing</span>
+          <a href="/dashboard" class="syllabus-phase-link">Open →</a>
+        </div>
+        <div class="syllabus-topics">
+          <div class="syl-topic-row">
+            <span class="syl-index">S.1</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Newsletters & Essential Blogs</div>
+              <div class="syl-resources">
+                <span class="res res-web">The Batch (Andrew Ng)</span>
+                <span class="res res-web">Ahead of AI (Raschka)</span>
+                <span class="res res-web">Lilian Weng (OpenAI)</span>
+                <span class="res res-web">Jay Alammar</span>
+                <span class="res res-web">distill.pub</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">S.2</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Paper Discovery</div>
+              <div class="syl-resources">
+                <span class="res res-web">Papers with Code</span>
+                <span class="res res-web">HuggingFace Papers</span>
+                <span class="res res-web">Connected Papers</span>
+              </div>
+            </div>
+          </div>
+          <div class="syl-topic-row">
+            <span class="syl-index">S.3</span>
+            <div class="syl-topic-body">
+              <div class="syl-topic-name">Guidance System (5 habits)</div>
+              <div class="syl-resources">
+                <span class="res res-web">Weekly Rhythm</span>
+                <span class="res res-web">Project Ladder</span>
+                <span class="res res-web">Knowledge Consolidation</span>
+                <span class="res res-web">Paper-Reading Habit</span>
+                <span class="res res-web">Avoiding Tutorial Hell</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     GUIDANCE SYSTEM
+═══════════════════════════════════════════ -->
+<section class="section" id="guidance">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Guidance System</div>
+      <h2 class="section-title">How to Actually Follow This Roadmap</h2>
+      <p class="section-subtitle">A roadmap without a system is a wish list. These habits determine whether this journey produces genuine expertise.</p>
+    </div>
+
+    <div class="guidance-grid">
+
+      <div class="guidance-card">
+        <div class="guidance-card-body">
+          <div class="guidance-icon-row">
+            <span class="guidance-icon-glyph">📅</span>
+            <div class="guidance-card-title">The Weekly Operating Rhythm</div>
+          </div>
+          <p class="guidance-card-desc">Split every week: <strong>60%</strong> course content, <strong>30%</strong> implementation from scratch, <strong>10%</strong> writing (the Feynman test). Without this split, all time goes to passive watching.</p>
+          <div class="guidance-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Passive video watching gives a false sense of progress. The 30% implementation slot is non-negotiable.
+          </div>
+        </div>
+      </div>
+
+      <div class="guidance-card">
+        <div class="guidance-card-body">
+          <div class="guidance-icon-row">
+            <span class="guidance-icon-glyph">🏗️</span>
+            <div class="guidance-card-title">The Project Ladder</div>
+          </div>
+          <p class="guidance-card-desc">One major deliverable per stage. After Stage 4: train your own GPT. After Stage 7: deploy a live ML API. Treat your GitHub as your technical resume — employers care about what you built.</p>
+          <div class="guidance-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            A live, publicly accessible ML demo is the single most impactful portfolio item you can have.
+          </div>
+        </div>
+      </div>
+
+      <div class="guidance-card">
+        <div class="guidance-card-body">
+          <div class="guidance-icon-row">
+            <span class="guidance-icon-glyph">📝</span>
+            <div class="guidance-card-title">Knowledge Consolidation</div>
+          </div>
+          <p class="guidance-card-desc">Set up an Obsidian or Notion vault. For every concept: intuition, math, code, failure modes. Publish blog posts to force clarity of thought. ML involves thousands of disconnected concepts.</p>
+          <div class="guidance-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            If you can't explain it simply, you don't understand it yet.
+          </div>
+        </div>
+      </div>
+
+      <div class="guidance-card">
+        <div class="guidance-card-body">
+          <div class="guidance-icon-row">
+            <span class="guidance-icon-glyph">📄</span>
+            <div class="guidance-card-title">The Paper-Reading Habit</div>
+          </div>
+          <p class="guidance-card-desc">One classic paper per week from Stage 4 onwards. Strategy: abstract/conclusion → intro → skim results → read methods. Never read linearly on the first pass.</p>
+          <div class="guidance-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            The field moves faster than textbooks. Expert = comfortable reading raw research.
+          </div>
+        </div>
+      </div>
+
+      <div class="guidance-card">
+        <div class="guidance-card-body">
+          <div class="guidance-icon-row">
+            <span class="guidance-icon-glyph">⚠️</span>
+            <div class="guidance-card-title">Avoid Tutorial Hell</div>
+          </div>
+          <p class="guidance-card-desc">Do not collect courses — finish them. Do not treat <code>model.fit()</code> as magic. True learning only happens when you're stuck debugging your own code, not following along with a video.</p>
+          <div class="guidance-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Tutorial-following gives false competence. Build from scratch whenever possible.
+          </div>
+        </div>
+      </div>
+
+      <div class="guidance-card guidance-card--cta">
+        <div class="guidance-card-body">
+          <div class="guidance-icon-row">
+            <span class="guidance-icon-glyph">🧭</span>
+            <div class="guidance-card-title">Full Guidance on Dashboard</div>
+          </div>
+          <p class="guidance-card-desc">The interactive dashboard includes a complete Guidance section with full details, plus a "Stay Updated" section for curated newsletters, blogs, and paper discovery tools.</p>
+          <div class="guidance-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Navigate to Guidance → in the sidebar of the dashboard to access all five habit systems.
+          </div>
+          <a href="/dashboard" class="guidance-cta-btn">
+            Open Dashboard
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     RESOURCE CTA BANNER
+═══════════════════════════════════════════ -->
+<section class="section" id="cta-banner">
+  <div class="container">
+    <div class="cta-banner">
+      <div class="cta-banner-inner">
+        <div class="cta-banner-left">
+          <div class="section-eyebrow" style="margin-bottom:10px;">Ready to Begin?</div>
+          <div class="cta-banner-title">Your Complete ML Library Awaits</div>
+          <p class="cta-banner-desc">
+            The interactive dashboard lets you browse every resource by phase and topic, filter by type, and open a full breakdown — what it covers, why it matters, and the direct link — for any resource with one click.
+          </p>
+          <div class="res-type-grid">
+            <div class="res-type-item"><span class="res-type-icon">🎓</span> Courses</div>
+            <div class="res-type-item"><span class="res-type-icon">▶️</span> YouTube</div>
+            <div class="res-type-item"><span class="res-type-icon">📚</span> Free Books</div>
+            <div class="res-type-item"><span class="res-type-icon">📄</span> Papers</div>
+            <div class="res-type-item"><span class="res-type-icon">🐙</span> Repos</div>
+            <div class="res-type-item"><span class="res-type-icon">🌐</span> Websites</div>
+          </div>
+        </div>
+        <div class="cta-banner-right">
+          <a href="/dashboard" class="btn-cta-large">
+            Open Dashboard
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+
+      <div class="footer-brand-block">
+        <a href="/" class="footer-brand">
+          <div class="footer-brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          AI/ML Roadmap
+        </a>
+        <p class="footer-tagline">A curated 12–18 month journey from Python to cutting-edge LLMs. Built for depth over breadth.</p>
+        <div class="footer-progress-row">
+          <span>Phase 0</span>
+          <div class="footer-progress-bar">
+            <div class="footer-progress-fill"></div>
+          </div>
+          <span>Stage 7</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Roadmap</div>
+        <div class="footer-links">
+          <a href="/dashboard" class="footer-link">Phase 0 — Python</a>
+          <a href="/dashboard" class="footer-link">Phase 1 — Math</a>
+          <a href="/dashboard" class="footer-link">Stages 1–2 — Classical ML</a>
+          <a href="/dashboard" class="footer-link">Stage 3 — Deep Learning</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Advanced</div>
+        <div class="footer-links">
+          <a href="/dashboard" class="footer-link">Stage 4 — First Principles</a>
+          <a href="/dashboard" class="footer-link">Stage 5 — Specialisation</a>
+          <a href="/dashboard" class="footer-link">Stage 6 — LLMs</a>
+          <a href="/dashboard" class="footer-link">Stage 7 — MLOps</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">System</div>
+        <div class="footer-links">
+          <a href="/dashboard" class="footer-link">Guidance System</a>
+          <a href="/dashboard" class="footer-link">Stay Updated</a>
+          <a href="#syllabus"  class="footer-link">Syllabus Index</a>
+          <a href="#roadmap"   class="footer-link">Roadmap Overview</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-bottom-text">Built for learners who value depth over breadth.</span>
+      <div class="footer-tags">
+        <span class="footer-tag">Python</span>
+        <span class="footer-tag">Math</span>
+        <span class="footer-tag">Deep Learning</span>
+        <span class="footer-tag">LLMs</span>
+        <span class="footer-tag">MLOps</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // ─── Curriculum Preview Dashboard ───
+  // ─── Tech Stack Data ───
+  const PREVIEW_ITEMS = [
+    { label: 'Python',          meta: 'Language',       cat: 'lang',  icon: '🐍', color: 'blue' },
+    { label: 'NumPy',           meta: 'Numerical',      cat: 'lang',  icon: '📐', color: 'blue' },
+    { label: 'Pandas',          meta: 'Data Wrangling', cat: 'lang',  icon: '🗂️', color: 'blue' },
+    { label: 'Matplotlib',      meta: 'Visualization',  cat: 'lang',  icon: '📊', color: 'blue' },
+    { label: 'Linear Algebra',  meta: 'Vectors · Matrices', cat: 'math', icon: '▦', color: 'gold' },
+    { label: 'Calculus',        meta: 'Gradients · Optimization', cat: 'math', icon: '∫', color: 'gold' },
+    { label: 'Probability',     meta: 'Statistics · Bayes', cat: 'math', icon: '🎲', color: 'gold' },
+    { label: 'Scikit-Learn',    meta: 'Framework',      cat: 'ml',    icon: '⚙️', color: 'green' },
+    { label: 'XGBoost',         meta: 'Gradient Boosting', cat: 'ml', icon: '🚀', color: 'green' },
+    { label: 'ISLP Textbook',   meta: 'Statistical Learning', cat: 'ml', icon: '📖', color: 'green' },
+    { label: 'PyTorch',         meta: 'DL Framework',   cat: 'dl',    icon: '🔥', color: 'red' },
+    { label: 'TensorFlow',      meta: 'DL Framework',   cat: 'dl',    icon: '🧩', color: 'red' },
+    { label: 'CNNs',            meta: 'Computer Vision', cat: 'dl',   icon: '👁️', color: 'red' },
+    { label: 'RNNs · LSTMs',    meta: 'Sequence Models', cat: 'dl',   icon: '🔁', color: 'red' },
+    { label: 'Backpropagation', meta: 'Training Algorithm', cat: 'dl', icon: '📉', color: 'red' },
+    { label: 'Transformers',    meta: 'Attention Mechanism', cat: 'llm', icon: '⚡', color: 'purple' },
+    { label: 'GPT Architecture', meta: 'Autoregressive LM', cat: 'llm', icon: '🤖', color: 'purple' },
+    { label: 'LoRA · PEFT',     meta: 'Efficient Fine-tuning', cat: 'llm', icon: '🔧', color: 'purple' },
+    { label: 'RLHF',            meta: 'Alignment',      cat: 'llm',   icon: '🎯', color: 'purple' },
+    { label: 'RAG',             meta: 'Retrieval Augmented', cat: 'llm', icon: '📎', color: 'purple' },
+    { label: 'Docker',          meta: 'Containerization', cat: 'mlops', icon: '🐳', color: 'cyan' },
+    { label: 'FastAPI',         meta: 'Model Serving',  cat: 'mlops', icon: '⚡', color: 'cyan' },
+    { label: 'MLflow',          meta: 'Experiment Tracking', cat: 'mlops', icon: '📋', color: 'cyan' },
+    { label: 'CI/CD',           meta: 'Automation',     cat: 'mlops', icon: '🔄', color: 'cyan' },
+    { label: 'Monitoring',      meta: 'Drift · Observability', cat: 'mlops', icon: '📡', color: 'cyan' },
+  ];
+
+  // ─── Syllabus Data ───
+  const SYLLABUS = [
+    { tag: 'Phase 0',     tagCls: 'syl-tag-0',  title: 'Python Foundation',    dur: '4–6 weeks',
+      topics: [
+        { idx: '0.1', name: 'Python Basics & OOP',            resources: ['CS50P (Harvard)', 'Corey Schafer OOP', 'Automate the Boring Stuff', 'W3Schools Python'] },
+        { idx: '0.2', name: 'Numerical Data with NumPy',       resources: ['NumPy Crash Course (FCC)', 'PDSH Ch.2 — VanderPlas'] },
+        { idx: '0.3', name: 'Data Wrangling with Pandas',     resources: ['Kaggle Pandas Course', 'Keith Galli Tutorial', 'PDSH Ch.3'] },
+        { idx: '0.4', name: 'Data Visualization',             resources: ['Corey Schafer Matplotlib', 'Seaborn Gallery'] },
+      ]},
+    { tag: 'Phase 1',     tagCls: 'syl-tag-1',  title: 'Math for ML',          dur: '6–8 weeks',
+      topics: [
+        { idx: '1.1', name: 'Linear Algebra',                 resources: ['Imperial College / Coursera', 'Essence of Linear Algebra (3B1B)', 'Linear Algebra Done Right'] },
+        { idx: '1.2', name: 'Multivariate Calculus',          resources: ['Imperial College Calculus', 'Essence of Calculus (3B1B)', 'Matrix Calculus for DL (Parr & Howard)'] },
+        { idx: '1.3', name: 'Probability & Statistics',       resources: ['StatQuest (Josh Starmer)', 'Probabilistic ML Vol.1 (Murphy)', 'Seeing Theory (Brown Univ.)'] },
+      ]},
+    { tag: 'Phase 2', tagCls: 'syl-tag-2',  title: 'Classical ML',          dur: '10–12 weeks',
+      topics: [
+        { idx: '2.1', name: 'Supervised Learning',            resources: ['Andrew Ng ML Specialization', 'ISLP (James, Witten, Hastie)', 'StatQuest: Linear Models'] },
+        { idx: '2.2', name: 'Unsupervised Learning',          resources: ['Andrew Ng (Course 3)', 'ML-From-Scratch (GitHub)'] },
+        { idx: '2.3', name: 'Ensembles & Boosting',           resources: ['XGBoost Paper (Chen & Guestrin)', 'Random Forests (Breiman)', 'StatQuest: Random Forests'] },
+        { idx: '2.4', name: 'Practical Implementation',       resources: ['Hands-On ML 3rd Ed. (Geron)', 'Scikit-Learn User Guide'] },
+      ]},
+    { tag: 'Phase 3',    tagCls: 'syl-tag-3',  title: 'Deep Learning',         dur: '12–16 weeks',
+      topics: [
+        { idx: '3.1', name: 'Neural Networks & Backpropagation', resources: ['DL Specialization (Ng)', 'Nielsen: Neural Networks & DL', 'TensorFlow Playground'] },
+        { idx: '3.2', name: 'Regularization & Optimization',  resources: ['Improving Deep NNs (DeepLearning.AI)', 'Dropout Paper (Srivastava et al.)', 'Adam Paper (Kingma & Ba)'] },
+        { idx: '3.3', name: 'Convolutional Neural Networks',  resources: ['CNN Course (DeepLearning.AI)', 'Deep Residual Learning – ResNet (He et al.)'] },
+        { idx: '3.4', name: 'Sequence Models',                resources: ['Sequence Models (DeepLearning.AI)', 'Stanford CS224n Lectures'] },
+      ]},
+    { tag: 'Phase 4',    tagCls: 'syl-tag-4',  title: 'First Principles',      dur: '6–8 weeks',
+      topics: [
+        { idx: '4.1', name: 'Autograd from Scratch',          resources: ['Neural Networks: Zero to Hero (Karpathy)', 'micrograd (GitHub)'] },
+        { idx: '4.2', name: 'Language Modeling from Scratch', resources: ['Building makemore (Karpathy)'] },
+        { idx: '4.3', name: 'Building a Transformer',         resources: ["Let's build GPT (Karpathy)", 'Attention Is All You Need (Vaswani et al.)', 'The Annotated Transformer (Harvard NLP)'] },
+      ]},
+    { tag: 'Phase 5',    tagCls: 'syl-tag-5',  title: 'Specialisation',        dur: '12–16 weeks',
+      topics: [
+        { idx: '5.1', name: 'Computer Vision Track',         resources: ['Stanford CS231n', 'CS231n Lectures', 'CS231n Assignments (GitHub)'] },
+        { idx: '5.2', name: 'NLP Track',                     resources: ['Stanford CS224n', 'HuggingFace NLP Course', 'Speech and Language Processing (Jurafsky & Martin)'] },
+        { idx: '5.3', name: 'Reinforcement Learning Track',  resources: ['David Silver RL Course (DeepMind)', 'HuggingFace Deep RL', 'Reinforcement Learning (Sutton & Barto)'] },
+      ]},
+    { tag: 'Phase 6',    tagCls: 'syl-tag-6',  title: 'Large Language Models', dur: '10–14 weeks',
+      topics: [
+        { idx: '6.1', name: 'Advanced Transformer Architectures', resources: ['Stanford CS336', 'Build an LLM (Sebastian Raschka)'] },
+        { idx: '6.2', name: 'Pre-training & Scaling Laws',    resources: ['GPT-3 – Language Models are Few-Shot Learners'] },
+        { idx: '6.3', name: 'Fine-tuning & Alignment',       resources: ['HuggingFace LLM Course', 'InstructGPT (Ouyang et al.)', 'LoRA (Hu et al.)', 'meta-llama/llama3'] },
+      ]},
+    { tag: 'Phase 7',    tagCls: 'syl-tag-7',  title: 'MLOps',                dur: '8–10 weeks',
+      topics: [
+        { idx: '7.1', name: 'Model Deployment & Serving',    resources: ['Made With ML (Goku Mohandas)', 'GokuMohandas/Made-With-ML'] },
+        { idx: '7.2', name: 'Experiment Tracking',           resources: ['Full Stack Deep Learning (UC Berkeley)', 'mlflow/mlflow'] },
+        { idx: '7.3', name: 'Monitoring & System Design',    resources: ['ML Engineering (Andriy Burkov)', "Chip Huyen's Blog", 'ML: The High-Interest Credit Card of Technical Debt'] },
+      ]},
+  ];
+
+  // ─── Render Functions ───
+  function renderTechStack(filter) {
+    const grid = document.getElementById('previewGrid');
+    grid.innerHTML = PREVIEW_ITEMS
+      .filter(item => filter === 'all' || item.cat === filter)
+      .map(item => `
+        <div class="preview-item">
+          <div class="preview-item-icon preview-item-icon--${item.color}">${item.icon}</div>
+          <div>
+            <div class="preview-item-label">${item.label}</div>
+            <div class="preview-item-meta">${item.meta}</div>
+          </div>
+        </div>
+      `).join('');
+  }
+
+  let currentPhase = 0;
+
+  function renderPhaseTabs() {
+    return SYLLABUS.map((p, i) => `
+      <button class="ps-phase-tab ${i === currentPhase ? 'active' : ''}" data-pidx="${i}">
+        <span>${p.tag}</span>
+        <span style="color:var(--text-muted);font-weight:400;font-size:10px;">${p.title}</span>
+      </button>
+    `).join('');
+  }
+
+  function renderPhaseContent(index) {
+    const p = SYLLABUS[index];
+    if (!p) return '';
+    return `
+      <div class="ps-header">
+        <span class="ps-tag ${p.tagCls}">${p.tag}</span>
+        <span class="ps-title">${p.title}</span>
+        <span class="ps-dur">${p.dur}</span>
+      </div>
+      <div class="ps-topics">
+        ${p.topics.map(t => `
+          <div class="ps-topic">
+            <span class="ps-idx">${t.idx}</span>
+            <div>
+              <div class="ps-topic-name">${t.name}</div>
+              <div class="ps-resources">
+                ${t.resources.map(r => `<span class="ps-res">${r}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  function selectPhase(index) {
+    currentPhase = index;
+    const content = document.getElementById('psContent');
+    content.innerHTML = renderPhaseContent(index);
+    // Re-render tabs to update active state
+    const tabBar = document.getElementById('psTabBar');
+    tabBar.innerHTML = renderPhaseTabs();
+    // Re-attach click handlers
+    tabBar.querySelectorAll('.ps-phase-tab').forEach(btn => {
+      btn.addEventListener('click', () => selectPhase(Number(btn.dataset.pidx)));
+    });
+  }
+
+  function renderSyllabus() {
+    const container = document.getElementById('previewSyllabus');
+    container.innerHTML = `
+      <div class="ps-phase-tabs" id="psTabBar">${renderPhaseTabs()}</div>
+      <div class="ps-active-phase" id="psContent">${renderPhaseContent(currentPhase)}</div>
+    `;
+    container.querySelectorAll('.ps-phase-tab').forEach(btn => {
+      btn.addEventListener('click', () => selectPhase(Number(btn.dataset.pidx)));
+    });
+  }
+
+  // ─── View Switching ───
+  function showView(view) {
+    document.getElementById('previewStack').style.display = view === 'stack' ? '' : 'none';
+    document.getElementById('previewSyllabus').style.display = view === 'syllabus' ? '' : 'none';
+  }
+
+  document.querySelectorAll('.pv-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.pv-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      showView(tab.dataset.view);
+    });
+  });
+
+  document.querySelectorAll('.pf-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderTechStack(btn.dataset.pf);
+    });
+  });
+
+  renderTechStack('all');
+  renderSyllabus();
+
+  // ─── Resources Sidebar + Content ───
+  const DOT_COLORS = ['#5dc865','#7fbcf6','#f5c842','#f87171','#c084fc','#7fbcf6','#e879f9','#38bdf8'];
+  const RES_PHASES = [
+    { tag: 'Phase 0', title: 'Python Foundation', dur: '4\u20136 weeks',
+      topics: [
+        { name: 'Python Basics & OOP', resources: [
+          { t:'course', l:'CS50P \u2014 Harvard / edX', u:'https://cs50.harvard.edu/python/', s:'Harvard University' },
+          { t:'yt', l:'Corey Schafer Python OOP', u:'https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc', s:'Corey Schafer' },
+          { t:'book', l:'Automate the Boring Stuff', u:'https://automatetheboringstuff.com/', s:'Al Sweigart' },
+          { t:'web', l:'W3Schools Python', u:'https://www.w3schools.com/python/', s:'W3Schools' } ]},
+        { name: 'Numerical Data with NumPy', resources: [
+          { t:'course', l:'NumPy Crash Course (FCC)', u:'https://www.youtube.com/watch?v=QUT1VHiLmmI', s:'freeCodeCamp' },
+          { t:'book', l:'PDSH Ch.2 \u2014 VanderPlas', u:'https://jakevdp.github.io/PythonDataScienceHandbook/', s:'Jake VanderPlas' } ]},
+        { name: 'Data Wrangling with Pandas', resources: [
+          { t:'course', l:'Kaggle Pandas Course', u:'https://www.kaggle.com/learn/pandas', s:'Kaggle' },
+          { t:'yt', l:'Keith Galli Tutorial', u:'https://www.youtube.com/watch?v=vmEHCJofslg', s:'Keith Galli' },
+          { t:'book', l:'PDSH Ch.3', u:'https://jakevdp.github.io/PythonDataScienceHandbook/', s:'Jake VanderPlas' } ]},
+        { name: 'Data Visualization', resources: [
+          { t:'yt', l:'Corey Schafer Matplotlib', u:'https://www.youtube.com/playlist?list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_', s:'Corey Schafer' },
+          { t:'web', l:'Seaborn Gallery', u:'https://seaborn.pydata.org/examples/index.html', s:'seaborn' } ]},
+      ]},
+    { tag: 'Phase 1', title: 'Math for ML', dur: '6\u20138 weeks',
+      topics: [
+        { name: 'Linear Algebra', resources: [
+          { t:'course', l:'Imperial College / Coursera', u:'https://www.coursera.org/specializations/mathematics-machine-learning', s:'Imperial College London' },
+          { t:'yt', l:'Essence of Linear Algebra (3B1B)', u:'https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab', s:'3Blue1Brown' },
+          { t:'book', l:'Linear Algebra Done Right', u:'https://linear.axler.net/', s:'Sheldon Axler' } ]},
+        { name: 'Multivariate Calculus', resources: [
+          { t:'course', l:'Imperial College Calculus', u:'https://www.coursera.org/learn/multivariate-calculus-machine-learning', s:'Imperial College London' },
+          { t:'yt', l:'Essence of Calculus (3B1B)', u:'https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr', s:'3Blue1Brown' },
+          { t:'paper', l:'Matrix Calculus for DL (Parr & Howard)', u:'https://arxiv.org/abs/1802.01528', s:'arXiv' } ]},
+        { name: 'Probability & Statistics', resources: [
+          { t:'yt', l:'StatQuest (Josh Starmer)', u:'https://www.youtube.com/@statquest', s:'Josh Starmer' },
+          { t:'book', l:'Probabilistic ML Vol.1 (Murphy)', u:'https://probml.github.io/pml-book/book1.html', s:'Kevin Murphy' },
+          { t:'web', l:'Seeing Theory (Brown Univ.)', u:'https://seeing-theory.brown.edu/', s:'Brown University' } ]},
+      ]},
+    { tag: 'Phase 2', title: 'Classical ML', dur: '10\u201312 weeks',
+      topics: [
+        { name: 'Supervised Learning', resources: [
+          { t:'course', l:'Andrew Ng ML Specialization', u:'https://www.coursera.org/specializations/machine-learning-introduction', s:'DeepLearning.AI / Stanford' },
+          { t:'book', l:'ISLP (James, Witten, Hastie)', u:'https://www.statlearning.com/', s:'Springer' },
+          { t:'yt', l:'StatQuest: Linear Models', u:'https://www.youtube.com/watch?v=nk2CQITm_eo', s:'Josh Starmer' } ]},
+        { name: 'Unsupervised Learning', resources: [
+          { t:'course', l:'Andrew Ng (Course 3)', u:'https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning', s:'DeepLearning.AI' },
+          { t:'repo', l:'ML-From-Scratch (GitHub)', u:'https://github.com/eriklindernoren/ML-From-Scratch', s:'Erik Linder-Nor\u00e9n' } ]},
+        { name: 'Ensembles & Boosting', resources: [
+          { t:'paper', l:'XGBoost Paper (Chen & Guestrin)', u:'https://arxiv.org/abs/1603.02754', s:'arXiv' },
+          { t:'paper', l:'Random Forests (Breiman)', u:'https://doi.org/10.1023/A:1010933404324', s:'Springer' },
+          { t:'yt', l:'StatQuest: Random Forests', u:'https://www.youtube.com/watch?v=J4Wdy0Wc_xQ', s:'Josh Starmer' } ]},
+        { name: 'Practical Implementation', resources: [
+          { t:'book', l:"Hands-On ML 3rd Ed. (Geron)", u:'https://github.com/ageron/handson-ml3', s:'Aur\u00e9lien G\u00e9ron' },
+          { t:'web', l:'Scikit-Learn User Guide', u:'https://scikit-learn.org/stable/user_guide.html', s:'scikit-learn' } ]},
+      ]},
+    { tag: 'Phase 3', title: 'Deep Learning', dur: '12\u201316 weeks',
+      topics: [
+        { name: 'Neural Networks & Backpropagation', resources: [
+          { t:'course', l:'DL Specialization (Ng)', u:'https://www.coursera.org/specializations/deep-learning', s:'DeepLearning.AI' },
+          { t:'book', l:'Nielsen: Neural Networks & DL', u:'http://neuralnetworksanddeeplearning.com/', s:'Michael Nielsen' },
+          { t:'web', l:'TensorFlow Playground', u:'https://playground.tensorflow.org/', s:'Google' } ]},
+        { name: 'Regularization & Optimization', resources: [
+          { t:'course', l:'Improving Deep NNs (DeepLearning.AI)', u:'https://www.coursera.org/learn/deep-neural-network', s:'DeepLearning.AI' },
+          { t:'paper', l:'Dropout Paper (Srivastava et al.)', u:'https://jmlr.org/papers/v15/srivastava14a.html', s:'JMLR' },
+          { t:'paper', l:'Adam Paper (Kingma & Ba)', u:'https://arxiv.org/abs/1412.6980', s:'arXiv' } ]},
+        { name: 'Convolutional Neural Networks', resources: [
+          { t:'course', l:'CNN Course (DeepLearning.AI)', u:'https://www.coursera.org/learn/convolutional-neural-networks', s:'DeepLearning.AI' },
+          { t:'paper', l:'Deep Residual Learning \u2013 ResNet (He et al.)', u:'https://arxiv.org/abs/1512.03385', s:'arXiv' } ]},
+        { name: 'Sequence Models', resources: [
+          { t:'course', l:'Sequence Models (DeepLearning.AI)', u:'https://www.coursera.org/learn/nlp-sequence-models', s:'DeepLearning.AI' },
+          { t:'course', l:'Stanford CS224n Lectures', u:'https://web.stanford.edu/class/cs224n/', s:'Stanford University' } ]},
+      ]},
+    { tag: 'Phase 4', title: 'First Principles', dur: '6\u20138 weeks',
+      topics: [
+        { name: 'Autograd from Scratch', resources: [
+          { t:'yt', l:'Neural Networks: Zero to Hero (Karpathy)', u:'https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ', s:'Andrej Karpathy' },
+          { t:'repo', l:'micrograd (GitHub)', u:'https://github.com/karpathy/micrograd', s:'Andrej Karpathy' } ]},
+        { name: 'Language Modeling from Scratch', resources: [
+          { t:'yt', l:'Building makemore (Karpathy)', u:'https://www.youtube.com/watch?v=PaCmpygFfXo&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ', s:'Andrej Karpathy' } ]},
+        { name: 'Building a Transformer', resources: [
+          { t:'yt', l:"Let's build GPT (Karpathy)", u:'https://www.youtube.com/watch?v=kCc8FmEb1nY', s:'Andrej Karpathy' },
+          { t:'paper', l:'Attention Is All You Need (Vaswani et al.)', u:'https://arxiv.org/abs/1706.03762', s:'arXiv' },
+          { t:'web', l:'The Annotated Transformer (Harvard NLP)', u:'https://nlp.seas.harvard.edu/annotated-transformer/', s:'Harvard NLP' } ]},
+      ]},
+    { tag: 'Phase 5', title: 'Specialisation', dur: '12\u201316 weeks',
+      topics: [
+        { name: 'Computer Vision Track', resources: [
+          { t:'course', l:'Stanford CS231n', u:'https://cs231n.stanford.edu/', s:'Stanford University' },
+          { t:'yt', l:'CS231n Lectures', u:'https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv', s:'Stanford University' },
+          { t:'repo', l:'CS231n Assignments (GitHub)', u:'https://github.com/cs231n/cs231n.github.io', s:'Stanford' } ]},
+        { name: 'NLP Track', resources: [
+          { t:'course', l:'Stanford CS224n', u:'https://web.stanford.edu/class/cs224n/', s:'Stanford University' },
+          { t:'course', l:'HuggingFace NLP Course', u:'https://huggingface.co/learn/nlp-course', s:'Hugging Face' },
+          { t:'book', l:'Speech and Language Processing (Jurafsky & Martin)', u:'https://web.stanford.edu/~jurafsky/slp3/', s:'Stanford University' } ]},
+        { name: 'Reinforcement Learning Track', resources: [
+          { t:'course', l:'David Silver RL Course (DeepMind)', u:'https://www.deepmind.com/learning-resources/reinforcement-learning-lectures-by-david-silver', s:'DeepMind' },
+          { t:'course', l:'HuggingFace Deep RL', u:'https://huggingface.co/learn/deep-rl-course', s:'Hugging Face' },
+          { t:'book', l:'Reinforcement Learning (Sutton & Barto)', u:'http://incompleteideas.net/book/the-book-2nd.html', s:'Richard Sutton' } ]},
+      ]},
+    { tag: 'Phase 6', title: 'Large Language Models', dur: '10\u201314 weeks',
+      topics: [
+        { name: 'Advanced Transformer Architectures', resources: [
+          { t:'course', l:'Stanford CS336', u:'https://stanford-cs336.github.io/', s:'Stanford University' },
+          { t:'book', l:'Build a Large Language Model (Raschka)', u:'https://www.manning.com/books/build-a-large-language-model-from-scratch', s:'Sebastian Raschka' } ]},
+        { name: 'Pre-training & Scaling Laws', resources: [
+          { t:'paper', l:'GPT-3 \u2013 Language Models are Few-Shot Learners', u:'https://arxiv.org/abs/2005.14165', s:'arXiv' } ]},
+        { name: 'Fine-tuning & Alignment', resources: [
+          { t:'course', l:'HuggingFace LLM Course', u:'https://huggingface.co/learn/llm-course', s:'Hugging Face' },
+          { t:'paper', l:'InstructGPT (Ouyang et al.)', u:'https://arxiv.org/abs/2203.02155', s:'arXiv' },
+          { t:'paper', l:'LoRA (Hu et al.)', u:'https://arxiv.org/abs/2106.09685', s:'arXiv' },
+          { t:'repo', l:'meta-llama/llama3', u:'https://github.com/meta-llama/llama3', s:'Meta' } ]},
+      ]},
+    { tag: 'Phase 7', title: 'MLOps', dur: '8\u201310 weeks',
+      topics: [
+        { name: 'Model Deployment & Serving', resources: [
+          { t:'course', l:'Made With ML (Goku Mohandas)', u:'https://madewithml.com/', s:'Goku Mohandas' },
+          { t:'repo', l:'GokuMohandas/Made-With-ML', u:'https://github.com/GokuMohandas/Made-With-ML', s:'GitHub' } ]},
+        { name: 'Experiment Tracking', resources: [
+          { t:'course', l:'Full Stack Deep Learning (UC Berkeley)', u:'https://fullstackdeeplearning.com/', s:'UC Berkeley' },
+          { t:'repo', l:'mlflow/mlflow', u:'https://github.com/mlflow/mlflow', s:'MLflow' } ]},
+        { name: 'Monitoring & System Design', resources: [
+          { t:'book', l:'ML Engineering (Andriy Burkov)', u:'https://www.mlebook.com/', s:'Andriy Burkov' },
+          { t:'web', l:"Chip Huyen's Blog", u:'https://huyenchip.com/blog/', s:'Chip Huyen' },
+          { t:'paper', l:'ML: The High-Interest Credit Card of Technical Debt', u:'https://research.google/pubs/ml-the-high-interest-credit-card-of-technical-debt/', s:'Google Research' } ]},
+      ]},
+  ];
+
+  let curResPhase = 0, curResModule = 0, curResFilter = 'all';
+
+  function rgbForPhase(i) {
+    return ['93,200,101','127,188,246','245,200,66','248,113,113','192,132,252','127,188,246','232,121,249','56,189,248'][i];
+  }
+
+  function renderResSidebar() {
+    return RES_PHASES.map((p, i) => `
+      <button class="res-side-btn${i === curResPhase ? ' active' : ''}" data-ridx="${i}">
+        <span class="res-side-label">
+          <span class="res-side-tag">${p.tag}</span>
+          <span class="res-side-title">${p.title}</span>
+          <span class="res-side-dur">${p.dur}</span>
+        </span>
+      </button>
+    `).join('');
+  }
+
+  function renderResModuleTabs() {
+    return RES_PHASES[curResPhase].topics.map((t, i) => `
+      <button class="resc-mod-btn${i === curResModule ? ' active' : ''}" data-midx="${i}">${t.name}</button>
+    `).join('');
+  }
+
+  function renderResFilterBar() {
+    const filters = [
+      { k:'all', l:'All' }, { k:'course', l:'Courses' }, { k:'yt', l:'YouTube' },
+      { k:'book', l:'Books' }, { k:'paper', l:'Papers' }, { k:'repo', l:'Repos' }, { k:'web', l:'Websites' }
+    ];
+    return filters.map(f => `
+      <button class="resc-f-btn${curResFilter === f.k ? ' active' : ''}" data-fk="${f.k}">${f.l}</button>
+    `).join('');
+  }
+
+  function renderResItems() {
+    const items = RES_PHASES[curResPhase].topics[curResModule].resources
+      .filter(r => curResFilter === 'all' || r.t === curResFilter);
+    if (!items.length) return '<div style="color:var(--text-muted);font-size:13px;padding:12px 0;">No resources match this filter.</div>';
+    return items.map(r => `
+      <a href="${r.u}" target="_blank" rel="noopener noreferrer" class="resc-card">
+        <span class="resc-card-top">
+          <span class="resc-badge resc-badge--${r.t}">${r.t}</span>
+          <span class="resc-card-title">${r.l}</span>
+        </span>
+        <span class="resc-card-source">${r.s}</span>
+      </a>
+    `).join('');
+  }
+
+  function renderResContent() {
+    const p = RES_PHASES[curResPhase];
+    const rgb = rgbForPhase(curResPhase);
+    return `
+      <div class="resc-header">
+        <span class="resc-tag" style="color:${DOT_COLORS[curResPhase]};background:rgba(${rgb},0.08);border:1px solid rgba(${rgb},0.15);">${p.tag}</span>
+        <span class="resc-title">${p.title}</span>
+        <span class="resc-dur">${p.dur}</span>
+      </div>
+      <div class="resc-mod-tabs">${renderResModuleTabs()}</div>
+      <div class="resc-filter-bar">${renderResFilterBar()}</div>
+      <div class="resc-items-grid">${renderResItems()}</div>
+    `;
+  }
+
+  function attachResHandlers() {
+    document.querySelectorAll('.res-side-btn').forEach(btn => {
+      btn.addEventListener('click', () => { curResPhase = Number(btn.dataset.ridx); curResModule = 0; curResFilter = 'all'; refreshRes(); });
+    });
+    document.querySelectorAll('.resc-mod-btn').forEach(btn => {
+      btn.addEventListener('click', () => { curResModule = Number(btn.dataset.midx); curResFilter = 'all'; refreshRes(); });
+    });
+    document.querySelectorAll('.resc-f-btn').forEach(btn => {
+      btn.addEventListener('click', () => { curResFilter = btn.dataset.fk; refreshRes(); });
+    });
+  }
+
+  function refreshRes() {
+    document.getElementById('resSidebar').innerHTML = renderResSidebar();
+    document.getElementById('resContent').innerHTML = renderResContent();
+    attachResHandlers();
+  }
+
+  refreshRes();
+
+  // ─── Smooth-scroll for anchor links ───
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const id = link.getAttribute('href');
+      const target = document.querySelector(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // IntersectionObserver — reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(
+    '.res-panel, .phase-row, .syllabus-phase-block, .guidance-card, .cta-banner, .section-header, .preview-panel'
+  ).forEach(el => observer.observe(el));
+
+  // Init lucide icons
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+</script>
+
+</body>
+</html>

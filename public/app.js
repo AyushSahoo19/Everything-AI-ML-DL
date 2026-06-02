@@ -727,13 +727,22 @@ function renderAllResources() {
       const seq = SEQUENCES[cat.k];
       h += `<div class="seq-section">
         <div class="seq-header">
-          <span class="seq-title">Learning Sequence</span>
-          <span class="seq-flagship">${seq.primary}</span>
+          <div class="seq-header-left">
+            <div class="seq-icon">↗</div>
+            <div>
+              <div class="seq-meta">Sequenced Path</div>
+              <div class="seq-title">Learning Sequence</div>
+            </div>
+          </div>
+          <div class="seq-flagship">
+            <div class="seq-flagship-label">Flagship</div>
+            <div class="seq-flagship-name">${seq.primary}</div>
+          </div>
         </div>
         <div class="seq-steps">
             ${seq.steps.map((step, si) => `<div class="seq-step">
               <div class="seq-step-line">
-                <span class="seq-step-num">${String(si + 1).padStart(2, '0')}</span>
+                <div class="seq-step-num">${si + 1}</div>
                 ${si < seq.steps.length - 1 ? '<div class="seq-step-connector"></div>' : ''}
               </div>
               <div class="seq-step-content">

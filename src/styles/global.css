@@ -738,7 +738,6 @@ a:hover {
   background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
-  border-left: 3px solid var(--text-link);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   position: relative;
 }

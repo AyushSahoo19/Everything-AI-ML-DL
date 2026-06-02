@@ -727,22 +727,13 @@ function renderAllResources() {
       const seq = SEQUENCES[cat.k];
       h += `<div class="seq-section">
         <div class="seq-header">
-          <div class="seq-header-left">
-            <div class="seq-icon">↗</div>
-            <div>
-              <div class="seq-meta">Sequenced Path</div>
-              <div class="seq-title">Learning Sequence</div>
-            </div>
-          </div>
-          <div class="seq-flagship">
-            <div class="seq-flagship-label">Flagship Resource</div>
-            <div class="seq-flagship-name">${seq.primary}</div>
-          </div>
+          <span class="seq-title">Learning Sequence</span>
+          <span class="seq-flagship">${seq.primary}</span>
         </div>
         <div class="seq-steps">
             ${seq.steps.map((step, si) => `<div class="seq-step">
               <div class="seq-step-line">
-                <div class="seq-step-num">${si + 1}</div>
+                <span class="seq-step-num">${String(si + 1).padStart(2, '0')}</span>
                 ${si < seq.steps.length - 1 ? '<div class="seq-step-connector"></div>' : ''}
               </div>
               <div class="seq-step-content">
@@ -751,11 +742,11 @@ function renderAllResources() {
                   ${step.items.map(function(item) {
                     var cls = item.u ? ' seq-card-link' : '';
                     var click = item.u ? ' onclick="window.open(\'' + item.u.replace(/'/g, "\\'") + '\',\'_blank\')"' : '';
-                    var title = item.n;
-                    var desc = item.d ? '<div class="seq-card-desc">' + item.d + '</div>' : '';
-                    return '<div class="seq-card' + cls + '"' + click + '>' +
-                      '<div class="seq-card-title">' + title + '</div>' + desc +
-                      '</div>';
+                    var html = '<div class="seq-card' + cls + '"' + click + '>' +
+                      '<div class="seq-card-title">' + item.n + '</div>';
+                    if (item.d) html += '<div class="seq-card-desc">' + item.d + '</div>';
+                    html += '</div>';
+                    return html;
                   }).join('')}
                 </div>
               </div>
